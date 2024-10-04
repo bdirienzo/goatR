@@ -1,9 +1,10 @@
-Package: paquete2
-Title: What the Package Does (One Line, Title Case)
+Package: goatR
+Title: Geographical Observations and Analysis of Temperature and Rainfall (Goatr)
 Version: 0.0.0.9000
-Authors@R: 
-    person("Fbernardo", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+Authors@R: c(
+person("Bernardo", "Di Rienzo", "bdirienzo.last@example.com", role = c("aut", "cre")),
+person ("Lautaro", "San Filippo", lsanfilippo@example.com, role = c("aut"))
+)
 Description: What the package does (one paragraph).
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
