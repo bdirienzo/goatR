@@ -2,8 +2,8 @@ Package: goatR
 Title: Geographical Observations and Analysis of Temperature and Rainfall (Goatr)
 Version: 0.0.0.9000
 Authors@R: c(
-  person("Bernardo", "Di Rienzo", "bdirienzo.last@example.com", role = c("aut", "cre")),
-  person("Lautaro", "San Filippo", lsanfilippo@example.com, role = "aut"))
+  person("Bernardo", "Di Rienzo", "bdirienzo@mail.austral.edu.ar", role = c("aut", "cre")),
+  person("Lautaro", "Sanfilippo", "lsanfilippo@mail.austral.edu.ar", role = "aut"))
 Description: To be completed.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
