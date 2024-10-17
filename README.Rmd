@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-En este paquete encontraras diversas funciones para operar con datos meteorológicos asi como tambien algunos datasets con información de distintas estaciones. 
+In this package, you will find various functions for working with meteorological data, as well as some datasets containing information from different weather stations.
 
 
 ``` r
