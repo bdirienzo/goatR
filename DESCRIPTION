@@ -14,3 +14,6 @@ BugReports: https://github.com/bdirienzo/goatR/issues
 Depends: 
     R (>= 2.10)
 LazyData: true
+Imports: 
+    dplyr,
+    readr

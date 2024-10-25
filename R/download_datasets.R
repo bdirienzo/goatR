@@ -6,7 +6,6 @@
 #'
 #' @export
 download_datasets <- function(){
-  library(readr)
   dir.create("data-raw", showWarnings = FALSE)
   urls <- c(
     "https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/metadatos_completos.csv",
