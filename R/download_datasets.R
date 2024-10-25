@@ -28,5 +28,13 @@ download_datasets <- function(){
     download.file(url = urls[i], destfile = file.path("data-raw", nombres_archivos[i]))
   }
 
+  metadata <- read.csv("data-raw/metadata.csv")
+  station_NH0472 <- read.csv("data-raw/station_NH0472.csv")
+  station_NH0910 <- read.csv("data-raw/station_NH0910.csv")
+  station_NH0046 <- read.csv("data-raw/station_NH0046.csv")
+  station_NH0098 <- read.csv("data-raw/station_NH0098.csv")
+  station_NH0437 <- read.csv("data-raw/station_NH0437.csv")
 
-}
+  metereological_data <- rbind(station_NH0472, station_NH0910, station_NH0046, station_NH0098, station_NH0437)
+  usethis::use_data(metereological_data, overwrite = TRUE)
+  }

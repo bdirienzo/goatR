@@ -7,5 +7,5 @@
 read_datasets()
 }
 \description{
-The function read_datasets() reads all files related to meteorology and loads them into the global environment.
+The function read_datasets() reads all files related to meteorology from 'data_raw' folder and loads them into the global environment.
 }
