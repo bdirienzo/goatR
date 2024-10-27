@@ -27,6 +27,10 @@
 #' data <- read_datasets(id_station = "NH0472")
 #'
 #' # Download the dataset with ID "NH0910" to a specified custom location
+#' if (!dir.exists("./custom_folder")) {
+#'  dir.create("./custom_folder")}
+#' download_datasets("NH0910", "./custom_folder/NH0910_data.csv")
+#' data <- read_datasets(path = "./custom_folder/NH0910_data.csv")
 #' download_datasets("NH0910", "./custom_folder/NH0910_data.csv")
 #'
 #' # Download all available datasets to the default "datasets-raw" folder
