@@ -4,10 +4,7 @@
 \alias{download_datasets}
 \title{Download a dataset from an \strong{Argentine weather station}}
 \usage{
-download_datasets(
-  id_station,
-  path = file.path("datasets-raw", paste0(id_station, ".csv"))
-)
+download_datasets(id_station, path = NULL)
 }
 \arguments{
 \item{id_station}{A string representing the identifier for the desired weather station.
@@ -18,7 +15,10 @@ This identifier constructs the download URL, and only these identifiers are acce
 to a "datasets-raw" folder within the current working directory, with a file name based on the station identifier.}
 }
 \value{
-A \code{.csv} file located in the specified or default path, containing data from the selected weather station.
+\itemize{
+\item A \code{.csv} file located in the specified or default path, containing data from the selected weather station.
+\item A string representing the path where the \code{.csv} file is saved
+}
 }
 \description{
 The function \emph{download_datasets()} downloads a CSV file from a remote repository, containing data from a selected Argentine weather station.
@@ -26,19 +26,23 @@ The user can specify the weather station by providing a valid identifier. If no 
 a default "datasets-raw" folder within the current working directory.
 }
 \details{
-\strong{WARNING:} This function may overwrite existing datasets if a file with the same name exists in the specified path!
-
-If the \code{path} parameter is not specified, this function creates a "datasets-raw" folder in the working directory (if it doesn't already exist)
+\itemize{
+\item If the \code{path} parameter is not specified, this function creates a "datasets-raw" folder in the working directory (if it doesn't already exist)
 and saves the dataset there using the format \code{"datasets-raw/<id_station>.csv"}.
+\item \strong{WARNING:} This function may overwrite existing datasets if a file with the same name exists in the specified path!
+}
 }
 \examples{
 # Download the dataset with ID "NH0472" to the default "datasets-raw" folder
 download_datasets("NH0472")
 
+# Use the id_station directly in read_datasets to load the data
+data <- read_datasets(id_station = "NH0472")
+
 # Download the dataset with ID "NH0910" to a specified custom location
-download_datasets("NH0910", "custom_folder/NH0910_data.csv")
+download_datasets("NH0910", "./custom_folder/NH0910_data.csv")
 
 }
 \seealso{
-\code{read.csv} to read and view the downloaded dataset.
+\code{goatR::read_datasets} to load and view the downloaded dataset.
 }
