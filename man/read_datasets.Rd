@@ -2,10 +2,49 @@
 % Please edit documentation in R/read_datasets.R
 \name{read_datasets}
 \alias{read_datasets}
-\title{Load datasets}
+\title{Read a weather station dataset}
 \usage{
-read_datasets()
+read_datasets(id_station = NULL, path = NULL)
+}
+\arguments{
+\item{id_station}{A string representing the identifier for the desired weather station, if \code{path} is not provided.
+Valid identifiers include: \code{"NH0472"}, \code{"NH0910"}, \code{"NH0046"}, \code{"NH0098"}, and \code{"NH0437"}. This parameter is used to construct the path to the CSV file.}
+
+\item{path}{An optional string specifying the file path of the CSV file to be read. If provided, \code{id_station} is ignored.}
+}
+\value{
+A data frame containing the weather station data if the file is successfully read.
 }
 \description{
-The function load.datasets() reads all files related to meteorology from 'data-raw' folder and loads them into the global environment.
+The \code{read_datasets()} function reads a CSV file containing meteorological data for a specific weather station.
+The function loads the data into the global environment, allowing analysis and further manipulation.
+}
+\details{
+This function is designed to work in conjunction with \code{download_datasets()}, which downloads and saves the weather station data.
+
+There are three ways to use this function:
+\enumerate{
+\item \strong{Using \code{download_datasets()} with the default path}: If the file is saved in the default \code{"datasets-raw"} folder,
+you only need to provide the \code{id_station} parameter to read the file.
+\item \strong{Using a custom path}: If you saved the file in a custom folder, provide the complete file path using the \code{path} parameter.
+\item \strong{Using the return value of \code{download_datasets()}}: You can store the path returned by \code{download_datasets()} in a variable
+and pass it to \code{read_datasets()} via the \code{path} parameter.
+}
+}
+\examples{
+# Use download_datasets() with default path, then read using id_station
+download_datasets("NH0472")
+data <- read_datasets(id_station = "NH0472")
+
+# Use a custom path
+download_datasets("NH0910", "./custom_folder/NH0910_data.csv")
+data <- read_datasets(path = "./custom_folder/NH0910_data.csv")
+
+# Store the path from download_datasets() and use it directly in read_datasets()
+file_path <- download_datasets("NH0046")
+data <- read_datasets(path = file_path)
+
+}
+\seealso{
+\code{goatR::download_datasets} to download and save weather station datasets.
 }
