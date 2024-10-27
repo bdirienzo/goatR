@@ -1,6 +1,7 @@
 ---
 output: github_document
 ---
+<img src="images/GOATR.png" alt="Estación meteorológica" width="200" align="right" style="float: right; margin-left: 10px;">
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
