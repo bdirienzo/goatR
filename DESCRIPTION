@@ -17,4 +17,5 @@ LazyData: true
 Imports: 
     dplyr,
     readr,
+    tidyr,
     utils
