@@ -1,7 +1,6 @@
 ---
 output: github_document
 ---
-<img src="images/GOATR.png" alt="Estación meteorológica" width="200" align="right" style="float: right; margin-left: 10px;">
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -14,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# goatR
+# goatR <a href="goatR"><img src="images/GOATR.png" alt="goatR logo" align="right" width="233" style="float: right; margin-left: 10px;"></a>
 
 <!-- badges: start -->
 

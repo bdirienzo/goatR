@@ -1,12 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# goatR <img src="images/GOATR.png" alt="Estación meteorológica" width="200" align="right" style="float: right; margin-left: 10px;">
-
-
+# goatR <a href="goatR"><img src="images/GOATR.png" alt="goatR logo" align="right" width="233" style="float: right; margin-left: 10px;"></a>
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
 In this package, you will find various functions for working with
