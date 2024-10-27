@@ -2,7 +2,7 @@
 % Please edit documentation in R/read_datasets.R
 \name{read_datasets}
 \alias{read_datasets}
-\title{Read a weather station dataset}
+\title{Read a downloaded dataset from an \strong{Argentine weather station}}
 \usage{
 read_datasets(id_station = NULL, path = NULL)
 }
