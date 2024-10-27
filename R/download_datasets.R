@@ -30,26 +30,37 @@
 #' @seealso `goatR::read_datasets` to load and view the downloaded dataset.
 #'
 #' @export
-download_datasets <- function(id_station, path = NULL) {
+
+download_datasets <- function(id_station = NULL, path = NULL) {
+  all_stations <- c("NH0472", "NH0910", "NH0046", "NH0098", "NH0437")
+
+  if (is.null(id_station)) {
+    lapply(all_stations, function(station) {
+      download_datasets(id_station = station)
+    })
+    return(invisible())
+  }
+
 
   if (is.null(path)) {
     dir.create("datasets-raw", showWarnings = FALSE)
     path <- file.path("datasets-raw", paste0(id_station, ".csv"))
-    }
+  }
+
 
   url <- sprintf("https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/%s.csv", id_station)
 
-  tryCatch ({
-    download.file (url, path)
+
+  tryCatch({
+    download.file(url = url, destfile = path)
     message("File downloaded successfully to: ", path)
     return(path)
   },
-
   error = function(e) {
     stop("Download failed. Please check the station ID and your internet connection. Error: ", conditionMessage(e))
   },
-
   warning = function(w) {
     warning("Download failed. Please check the station ID and your internet connection. Warning: ", conditionMessage(w))
   })
 }
+
