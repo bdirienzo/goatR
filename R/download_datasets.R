@@ -40,7 +40,7 @@
 #'
 #' @export
 download_datasets <- function(id_station = NULL, path = NULL) {
-  all_stations <- c("NH0472", "NH0910", "NH0046", "NH0098", "NH0437")
+  all_stations <- c("NH0472", "NH0910", "NH0046", "NH0098", "NH0437", "metadatos_completos")
 
   if (is.null(id_station)) {
     lapply(all_stations, function(station) {
