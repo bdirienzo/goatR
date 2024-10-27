@@ -4,6 +4,11 @@
 # goatR <a href="goatR"><img src="images/GOATR.png" alt="goatR logo" align="right" width="233" style="float: right; margin-left: 10px;"></a>
 
 <!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Build
+Status](https://github.com/bdirienzo/goatR/actions)](https://github.com/bdirienzo/goatR/actions/workflows/R-CMD-check.yaml/badge.svg)
 <!-- badges: end -->
 
 In this package, you will find various functions for working with
