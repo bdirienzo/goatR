@@ -5,3 +5,7 @@
 ^LICENSE\.md$
 ^CODE_OF_CONDUCT\.md$
 ^\.github$
+^dev$
+^goatr.Rproj$
+^custom_folder$
+^datasets-raw$
