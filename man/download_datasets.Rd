@@ -2,13 +2,43 @@
 % Please edit documentation in R/download_datasets.R
 \name{download_datasets}
 \alias{download_datasets}
-\title{Downloading datasets}
+\title{Download a dataset from an \strong{Argentine weather station}}
 \usage{
-download_datasets()
+download_datasets(
+  id_station,
+  path = file.path("datasets-raw", paste0(id_station, ".csv"))
+)
+}
+\arguments{
+\item{id_station}{A string representing the identifier for the desired weather station.
+Valid options include: \code{"NH0472"}, \code{"NH0910"}, \code{"NH0046"}, \code{"NH0098"}, and \code{"NH0437"}.
+This identifier constructs the download URL, and only these identifiers are accepted.}
+
+\item{path}{An optional file path where the downloaded file will be saved. By default, the file will be saved
+to a "datasets-raw" folder within the current working directory, with a file name based on the station identifier.}
+}
+\value{
+A \code{.csv} file located in the specified or default path, containing data from the selected weather station.
 }
 \description{
-The function download_datasets() creates the 'data' folder if it does not already exist and downloads all files related to meteorology.
+The function \emph{download_datasets()} downloads a CSV file from a remote repository, containing data from a selected Argentine weather station.
+The user can specify the weather station by providing a valid identifier. If no custom path is specified, the function will save the file in
+a default "datasets-raw" folder within the current working directory.
 }
 \details{
-WARNING: IT WILL OVERWRITE EXISTING DATASETS!
+\strong{WARNING:} This function may overwrite existing datasets if a file with the same name exists in the specified path!
+
+If the \code{path} parameter is not specified, this function creates a "datasets-raw" folder in the working directory (if it doesn't already exist)
+and saves the dataset there using the format \code{"datasets-raw/<id_station>.csv"}.
+}
+\examples{
+# Download the dataset with ID "NH0472" to the default "datasets-raw" folder
+download_datasets("NH0472")
+
+# Download the dataset with ID "NH0910" to a specified custom location
+download_datasets("NH0910", "custom_folder/NH0910_data.csv")
+
+}
+\seealso{
+\code{read.csv} to read and view the downloaded dataset.
 }

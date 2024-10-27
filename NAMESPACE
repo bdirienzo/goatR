@@ -2,3 +2,4 @@
 
 export(download_datasets)
 export(read_datasets)
+importFrom(utils,download.file)

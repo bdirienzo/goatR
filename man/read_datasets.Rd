@@ -2,10 +2,10 @@
 % Please edit documentation in R/read_datasets.R
 \name{read_datasets}
 \alias{read_datasets}
-\title{Read datasets}
+\title{Load datasets}
 \usage{
 read_datasets()
 }
 \description{
-The function read_datasets() reads all files related to meteorology from 'data_raw' folder and loads them into the global environment.
+The function load.datasets() reads all files related to meteorology from 'data-raw' folder and loads them into the global environment.
 }

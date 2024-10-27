@@ -1,40 +1,35 @@
-#' Downloading datasets
+#'Download a dataset from an **Argentine weather station**
 #'
-#'The function download_datasets() creates the 'data-raw' folder if it does not already exist and downloads all files related to meteorology.
+#' The function *download_datasets()* downloads a CSV file from a remote repository, containing data from a selected Argentine weather station.
+#' The user can specify the weather station by providing a valid identifier. If no custom path is specified, the function will save the file in
+#' a default "datasets-raw" folder within the current working directory.
 #'
-#'WARNING: IT WILL OVERWRITE EXISTING DATASETS!
+#' **WARNING:** This function may overwrite existing datasets if a file with the same name exists in the specified path!
+#'
+#' @param id_station A string representing the identifier for the desired weather station.
+#'   Valid options include: `"NH0472"`, `"NH0910"`, `"NH0046"`, `"NH0098"`, and `"NH0437"`.
+#'   This identifier constructs the download URL, and only these identifiers are accepted.
+#' @param path An optional file path where the downloaded file will be saved. By default, the file will be saved
+#'   to a "datasets-raw" folder within the current working directory, with a file name based on the station identifier.
+#'
+#' @details If the `path` parameter is not specified, this function creates a "datasets-raw" folder in the working directory (if it doesn't already exist)
+#'   and saves the dataset there using the format `"datasets-raw/<id_station>.csv"`.
+#'
+#' @return A `.csv` file located in the specified or default path, containing data from the selected weather station.
+#'
+#' @examples
+#' # Download the dataset with ID "NH0472" to the default "datasets-raw" folder
+#' download_datasets("NH0472")
+#'
+#' # Download the dataset with ID "NH0910" to a specified custom location
+#' download_datasets("NH0910", "custom_folder/NH0910_data.csv")
+#'
+#' @seealso `read.csv` to read and view the downloaded dataset.
 #'
 #' @export
-download_datasets <- function(){
-  dir.create("data-raw", showWarnings = FALSE)
-  urls <- c(
-    "https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/metadatos_completos.csv",
-    "https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/NH0472.csv",
-    "https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/NH0910.csv",
-    "https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/NH0046.csv",
-    "https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/NH0098.csv",
-    "https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/NH0437.csv"
-  )
-  nombres_archivos <- c(
-    "metadata.csv",
-    "station_NH0472.csv",
-    "station_NH0910.csv",
-    "station_NH0046.csv",
-    "station_NH0098.csv",
-    "station_NH0437.csv"
-  )
+download_datasets <- function(id_station, path=file.path("datasets-raw", paste0(id_station, ".csv"))) {
+  if(path == file.path("datasets-raw", paste0(id_station, ".csv"))) dir.create("datasets-raw", showWarnings = FALSE)
+  url <- sprintf("https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/%s.csv", id_station)
 
-  for (i in seq_along(urls)) {
-    download.file(url = urls[i], destfile = file.path("data-raw", nombres_archivos[i]))
-  }
-
-  metadata <- read.csv("data-raw/metadata.csv")
-  station_NH0472 <- read.csv("data-raw/station_NH0472.csv")
-  station_NH0910 <- read.csv("data-raw/station_NH0910.csv")
-  station_NH0046 <- read.csv("data-raw/station_NH0046.csv")
-  station_NH0098 <- read.csv("data-raw/station_NH0098.csv")
-  station_NH0437 <- read.csv("data-raw/station_NH0437.csv")
-
-  metereological_data <- rbind(station_NH0472, station_NH0910, station_NH0046, station_NH0098, station_NH0437)
-  usethis::use_data(metereological_data, overwrite = TRUE)
+  download.file(url = url, destfile = path)
   }
