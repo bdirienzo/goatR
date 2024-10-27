@@ -51,6 +51,6 @@ read_datasets <- function(id_station = NULL, path = NULL) {
     return(data)
   }
   else {
-    stop("The file or path doesn´t exist. Please check again, you only need to enter one argument.")
+    stop("The file or path doesn't exist. Please check again; you only need to enter one argument.")
   }
 }
