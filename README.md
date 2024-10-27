@@ -2,7 +2,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # goatR
-<img src="images/station_photo.png" alt="Estación meteorológica" width="200" align="right" style="float: right; margin-left: 10px;">
+<img src="images/GOATR.png" alt="Estación meteorológica" width="200" align="right" style="float: right; margin-left: 10px;">
 
 
 <!-- badges: start -->
