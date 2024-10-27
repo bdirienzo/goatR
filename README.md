@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# goatR <a href="goatR"><img src="images/GOATR.png" alt="goatR logo" align="right" width="233" style="float: right; margin-left: 10px;"></a>
+# goatR <a href="goatR"><img src="images/GOATR.png" alt="goatR logo" align="right" width="233" style="float: right; margin-left: 10px;"/></a>
 
 <!-- badges: start -->
 
@@ -12,6 +12,7 @@ Status](https://github.com/bdirienzo/goatR/actions)](https://github.com/bdirienz
 [![R-CMD-check](https://github.com/bdirienzo/goatR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/bdirienzo/goatR/actions/workflows/R-CMD-check.yaml)
 [![CRAN
 Downloads](https://cran.r-project.org/package=goatR)](https://cranlogs.r-pkg.org/badges/grand-total/goatR)
+
 <!-- badges: end -->
 
 In this package, you will find various functions for working with
