@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# goatR <a href="goatR">![goatR logo](dev/images/GOATR.png){alt="goatR logo" align="right" style="float: right; margin-left: 10px;"}</a>
+# goatR <a href="goatR"><img src="dev/images/GOATR.png" alt="goatR logo" align="right" style="float: right; margin-left: 10px;" width="200"></a>
 
 <!-- badges: start -->
 
@@ -21,6 +21,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
+# Summary
 In this package, you will find various functions for working with meteorological data, as well as some datasets containing information from different weather stations.
 
 ``` r
