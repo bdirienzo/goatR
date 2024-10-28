@@ -33,7 +33,7 @@
 #'
 #' @seealso `goatR::download_datasets` to download and save weather station datasets.
 #'
-#' @export
+#'@export
 read_datasets <- function(id_station = NULL, path = NULL) {
 
   if (is.null(path)) {
@@ -50,7 +50,7 @@ read_datasets <- function(id_station = NULL, path = NULL) {
     data <- read.csv(path)
 
     if (!is.null(id_station)) {
-      assign(id_station, data, envir = .GlobalEnv)
+      assign(id_station, data, envir = parent.frame())
     }
 
     return(data)

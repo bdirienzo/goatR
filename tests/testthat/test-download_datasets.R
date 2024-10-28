@@ -5,9 +5,9 @@ library(mockery)
 
 test_that("download_datasets works when id_station is NULL", {
   with_tempdir({
-    # Download all datasets
+
     download_datasets()
-    # Check that all files exist
+
     expect_true(file.exists("datasets-raw/NH0472.csv"))
     expect_true(file.exists("datasets-raw/NH0910.csv"))
     expect_true(file.exists("datasets-raw/NH0046.csv"))
