@@ -15,6 +15,9 @@ jobs:
         run: |
           install.packages('devtools')
           devtools::install_deps(dependencies = TRUE)
+      - name: Install covr
+        run: |
+          install.packages('covr')
       - name: Run tests
         run: |
           devtools::check()
