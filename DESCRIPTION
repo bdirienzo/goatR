@@ -1,10 +1,10 @@
 Package: goatR
-Title: Geographical Observations and Analysis of Temperature and Rainfall (Goatr)
+Title: Geographical Observations and Analysis of Temperature and Rainfall (goatR)
 Version: 0.0.0.9000
 Authors@R: c(
   person(given = "Bernardo", family = "Di Rienzo", email = "bdirienzo@mail.austral.edu.ar", role = c("aut", "cre")),
   person(given = "Lautaro", family = "Sanfilippo", email = "lsanfilippo@mail.austral.edu.ar", role = "aut"))
-Description: To be completed.
+Description: Comprehensive toolkit for working with meteorological data from Argentine weather stations.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
