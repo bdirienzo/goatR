@@ -48,9 +48,13 @@ read_datasets <- function(id_station = NULL, path = NULL) {
 
   if (file.exists(path)) {
     data <- read.csv(path)
+
+    if (!is.null(id_station)) {
+      assign(id_station, data, envir = .GlobalEnv)
+    }
+
     return(data)
-  }
-  else {
+  } else {
     stop("The file or path doesn't exist. Please check again; you only need to enter one argument.")
   }
 }
