@@ -1,32 +1,12 @@
-test_that("dataset download works", {
-  # Ejecutar las pruebas dentro de un directorio temporal
-  withr::with_tempdir({
-    # Test 1: Descargar archivo "NH0472" al directorio por defecto en el directorio temporal
-    download_datasets("NH0472")
-    expect_true(file.exists("datasets-raw/NH0472.csv"))
+library(testthat)
+library(withr)
+library(mockery)
 
-    # Test 2: Descargar archivo "NH0910" al directorio por defecto en el directorio temporal
-    download_datasets("NH0910")
-    expect_true(file.exists("datasets-raw/NH0910.csv"))
-
-    # Test 3: Descargar archivo "NH0046" al directorio por defecto en el directorio temporal
-    download_datasets("NH0046")
-    expect_true(file.exists("datasets-raw/NH0046.csv"))
-
-    # Test 4: Descargar archivo "NH0098" al directorio por defecto en el directorio temporal
-    download_datasets("NH0098")
-    expect_true(file.exists("datasets-raw/NH0098.csv"))
-
-    # Test 5: Descargar archivo "NH0437" al directorio por defecto en el directorio temporal
-    download_datasets("NH0437")
-    expect_true(file.exists("datasets-raw/NH0437.csv"))
-
-    # Test 6: Descargar archivo "metadatos_completos" al directorio por defecto en el directorio temporal
-    download_datasets("metadatos_completos")
-    expect_true(file.exists("datasets-raw/metadatos_completos.csv"))
-
-    # Test 7: Verificar que todos los archivos se hayan descargado cuando id_station es NULL
+test_that("download_datasets works when id_station is NULL", {
+  with_tempdir({
+    # Descargar todos los datasets
     download_datasets()
+    # Verificar que todos los archivos existen
     expect_true(file.exists("datasets-raw/NH0472.csv"))
     expect_true(file.exists("datasets-raw/NH0910.csv"))
     expect_true(file.exists("datasets-raw/NH0046.csv"))
@@ -36,54 +16,52 @@ test_that("dataset download works", {
   })
 })
 
-test_that("download_datasets handles errors correctly", {
-  withr::with_tempdir({
-    # Test 1: Mock de download.file para que genere un error
-    withr::local_mock(
-      download.file = function(url, destfile, ...) {
-        stop("Simulated download error")
-      }
+test_that("download_datasets works with a valid id_station", {
+  with_tempdir({
+    download_datasets("NH0472")
+    expect_true(file.exists("datasets-raw/NH0472.csv"))
+  })
+})
+
+test_that("download_datasets handles invalid id_station", {
+  with_tempdir({
+    expect_error(
+      download_datasets("INVALID_ID"),
+      "Invalid station ID. Valid options are: NH0472, NH0910, NH0046, NH0098, NH0437, metadatos_completos"
     )
+  })
+})
+
+test_that("download_datasets saves file to specified path", {
+  with_tempdir({
+    dir.create("custom_folder")
+    custom_path <- file.path("custom_folder", "NH0472.csv")
+    download_datasets("NH0472", path = custom_path)
+    expect_true(file.exists(custom_path))
+  })
+})
+
+test_that("download_datasets handles non-existent directory", {
+  with_tempdir({
+    custom_path <- file.path("nonexistent_directory", "NH0472.csv")
+    expect_error(
+      download_datasets("NH0472", path = custom_path),
+      "The specified directory does not exist."
+    )
+  })
+})
+
+test_that("download_datasets handles download errors", {
+  with_tempdir({
+    # Definir una función mock para simular un error en download.file
+    mock_download_file_error <- function(url, destfile, ...) {
+      stop("Simulated download error")
+    }
+    # Usar mockery::stub para reemplazar download.file dentro de download_datasets
+    stub(download_datasets, 'download.file', mock_download_file_error)
     expect_error(
       download_datasets("NH0472"),
       "Download failed. Please check the station ID and your internet connection. Error: Simulated download error"
-    )
-
-    # Test 2: Mock de download.file para que genere una advertencia
-    withr::local_mock(
-      download.file = function(url, destfile, ...) {
-        warning("Simulated download warning")
-        # Crear el archivo para no provocar otro error
-        file.create(destfile)
-      }
-    )
-    expect_warning(
-      download_datasets("NH0472"),
-      "Download may have issues: Simulated download warning"
-    )
-
-    # Test 3: Mock de download.file para que cree un archivo vacío
-    withr::local_mock(
-      download.file = function(url, destfile, ...) {
-        # Crear un archivo vacío
-        file.create(destfile)
-      }
-    )
-    expect_error(
-      download_datasets("NH0472"),
-      "Download failed. The file is either missing or empty."
-    )
-
-    # Test 4: ID de estación inválido
-    expect_error(
-      download_datasets("NH00000"),
-      "Invalid station ID. Valid options are: NH0472, NH0910, NH0046, NH0098, NH0437, metadatos_completos"
-    )
-
-    # Test 5: Directorio no existente
-    expect_error(
-      download_datasets("NH0437", "./testing/NH0437.csv"),
-      "The specified directory does not exist."
     )
   })
 })

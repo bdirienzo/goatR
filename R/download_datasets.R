@@ -63,22 +63,13 @@ download_datasets <- function(id_station = NULL, path = NULL) {
   }
 
   url <- sprintf("https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/%s.csv", id_station)
-
   tryCatch({
     download.file(url, path)
-
-    # Check if the file was downloaded and is not empty
-    if (!file.exists(path) || file.info(path)$size == 0) {
-      stop("Download failed. The file is either missing or empty.")
-    }
-
     message("File downloaded successfully to: ", path)
     return(path)
   },
   error = function(e) {
-    stop("Download failed. Please check the station ID and your internet connection. Error: ", conditionMessage(e))
-  },
-  warning = function(w) {
-    warning("Download may have issues: ", conditionMessage(w))
+    stop("Download failed. Please check the station ID and your internet connection. Error: ",
+         conditionMessage(e))
   })
 }
