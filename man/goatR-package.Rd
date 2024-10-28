@@ -19,5 +19,10 @@ Useful links:
 \author{
 \strong{Maintainer}: Bernardo Di Rienzo \email{bdirienzo@mail.austral.edu.ar}
 
+Authors:
+\itemize{
+  \item Lautaro Sanfilippo \email{lsanfilippo@mail.austral.edu.ar}
+}
+
 }
 \keyword{int?goaternal}
