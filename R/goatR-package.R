@@ -1,3 +1,49 @@
+#' goatR: Geographical Observations and Analysis of Temperature and Rainfall
+#'
+#' The \strong{goatR} package provides a comprehensive toolkit for working with meteorological data from Argentine weather stations. It offers functions to download, read, and analyze weather datasets, enabling users to efficiently handle meteorological information for research, analysis, and visualization purposes.
+#'
+#' @section Key Features:
+#' \itemize{
+#'   \item \strong{Data Downloading Functions}: Easily download datasets from various Argentine weather stations using \code{\link{download_datasets}}. This function allows you to specify a station ID to download data from a specific station or download all available datasets at once.
+#'   \item \strong{Data Reading Functions}: Read and import downloaded datasets into R with \code{\link{read_datasets}}. This function supports reading data by station ID or from a specified file path, facilitating seamless integration of weather data into your workflow.
+#'   \item \strong{Data Analysis Tools}: While primarily focused on data retrieval, the package lays the groundwork for further data analysis and visualization. Users can leverage these datasets to perform statistical analyses, create visualizations, and develop predictive models.
+#' }
+#'
+#' The \strong{goatR} package is designed to simplify the process of obtaining and working with meteorological data, particularly for researchers, climatologists, and data enthusiasts interested in Argentine weather patterns. By streamlining data access and providing user-friendly functions, the package helps users focus on analysis rather than data preparation.
+#'
+#' @section Installation:
+#' You can install the development version of \strong{goatR} from GitHub with:
+#' \preformatted{
+#' # install.packages("pak")
+#' pak::pak("bdirienzo/goatR")
+#' }
+#'
+#' @section Getting Help:
+#' If you encounter a bug or wish to request a new feature, please:
+#' \enumerate{
+#'   \item Check if the issue has already been reported in our \href{https://github.com/bdirienzo/goatR/issues}{issue tracker}.
+#'   \item If not, please file an issue with a minimal reproducible example on GitHub:
+#'     \enumerate{
+#'       \item A detailed description of the problem.
+#'       \item Steps to reproduce it.
+#'       \item A minimal reproducible example.
+#'       \item Information about your environment (R version, operating system, package version).
+#'     }
+#' }
+#'
+#' For questions and other discussions, please send us an email at:
+#' \itemize{
+#'   \item \email{bdirienzo@mail.austral.edu.ar}
+#'   \item \email{lsanfilippo@mail.austral.edu.ar}
+#' }
+#'
+#' We are committed to continually improving \strong{goatR} and appreciate your feedback and participation.
+#'
+#' @section Code of Conduct:
+#' Please note that the \strong{goatR} project is released with a Contributor Code of Conduct. By contributing to this project, you agree to abide by its terms.
+#'
+#' @docType package
+#' @name goatR
 #' @keywords internal
 "_PACKAGE"
 
