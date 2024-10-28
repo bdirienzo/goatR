@@ -1,8 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# goatR <a href="goatR"><img src="dev/images/GOATR.png" style="float: right; margin-left: 10px;"
-alt="goatR logo" data-align="right" /></a>
+# goatR <a href="goatR"><img src="/dev/images/GOATR.png"
+style="float: right; margin-left: 10px;" alt="goatR logo"
+data-align="right" /></a>
 
 <!-- badges: start -->
 
