@@ -1,6 +1,4 @@
-library(testthat)
-library(withr)
-library(mockery)
+use_
 
 test_that("download_datasets works when id_station is NULL", {
   with_tempdir({
