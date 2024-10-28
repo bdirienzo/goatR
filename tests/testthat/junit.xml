@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="download_datasets" timestamp="2024-10-28T14:03:15Z" hostname="MacBook-Pro-de-Berni.local" tests="9" skipped="0" failures="0" errors="0" time="23.115">
+    <testcase time="9.28800000000001" classname="download_datasets" name="dataset_download_works"/>
+    <testcase time="1.71000000000004" classname="download_datasets" name="dataset_download_works"/>
+    <testcase time="3.29400000000032" classname="download_datasets" name="dataset_download_works"/>
+    <testcase time="2.96799999999985" classname="download_datasets" name="dataset_download_works"/>
+    <testcase time="3.34900000000016" classname="download_datasets" name="dataset_download_works"/>
+    <testcase time="1.20299999999997" classname="download_datasets" name="dataset_download_works"/>
+    <testcase time="1.22699999999986" classname="download_datasets" name="dataset_download_works"/>
+    <testcase time="0.0610000000001492" classname="download_datasets" name="download_datasets_handles_errors_correctly"/>
+    <testcase time="0.0149999999998727" classname="download_datasets" name="download_datasets_handles_errors_correctly"/>
+  </testsuite>
+  <testsuite name="temperature_summary_table" timestamp="2024-10-28T14:03:38Z" hostname="MacBook-Pro-de-Berni.local" tests="1" skipped="0" failures="0" errors="0" time="0.052">
+    <testcase time="0.0520000000001346" classname="temperature_summary_table" name="multiplication_works"/>
+  </testsuite>
+</testsuites>
