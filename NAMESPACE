@@ -2,4 +2,6 @@
 
 export(download_datasets)
 export(read_datasets)
+export(temperature_summary_table)
+import(dplyr)
 importFrom(utils,download.file)
