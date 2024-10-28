@@ -28,7 +28,7 @@
 #'
 #' # Download the dataset with ID "NH0910" to a specified custom location
 #' if (!dir.exists("./custom_folder")) {
-#'  dir.create("./custom_folder")}
+#'   dir.create("./custom_folder")}
 #' download_datasets("NH0910", "./custom_folder/NH0910_data.csv")
 #' data <- read_datasets(path = "./custom_folder/NH0910_data.csv")
 #' download_datasets("NH0910", "./custom_folder/NH0910_data.csv")
@@ -49,15 +49,29 @@ download_datasets <- function(id_station = NULL, path = NULL) {
     return(invisible())
   }
 
+  if (!id_station %in% all_stations) {
+    stop("Invalid station ID. Valid options are: ", paste(all_stations, collapse = ", "))
+  }
+
   if (is.null(path)) {
     dir.create("datasets-raw", showWarnings = FALSE)
     path <- file.path("datasets-raw", paste0(id_station, ".csv"))
+  } else {
+    if (!dir.exists(dirname(path))) {
+      stop("The specified directory does not exist.")
+    }
   }
 
   url <- sprintf("https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/%s.csv", id_station)
 
   tryCatch({
     download.file(url, path)
+
+    # Check if the file was downloaded and is not empty
+    if (!file.exists(path) || file.info(path)$size == 0) {
+      stop("Download failed. The file is either missing or empty.")
+    }
+
     message("File downloaded successfully to: ", path)
     return(path)
   },
@@ -65,6 +79,6 @@ download_datasets <- function(id_station = NULL, path = NULL) {
     stop("Download failed. Please check the station ID and your internet connection. Error: ", conditionMessage(e))
   },
   warning = function(w) {
-    warning("Download failed. Please check the station ID and your internet connection. Warning: ", conditionMessage(w))
+    warning("Download may have issues: ", conditionMessage(w))
   })
 }
