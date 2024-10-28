@@ -9,6 +9,10 @@ on:
 jobs:
   R-CMD-check:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }} # Asegúrate de tener este token
+
     steps:
       - name: Check out the code
         uses: actions/checkout@v2
@@ -21,7 +25,7 @@ jobs:
           install.packages('remotes')
           remotes::install_deps(dependencies = TRUE)
 
-      - name: Run tests and check coverage
+      - name: Run tests and upload coverage to Codecov
         run: |
           install.packages('covr')
-          covr::codecov()
+          covr::codecov()  # Sube el reporte de cobertura a Codecov
