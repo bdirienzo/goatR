@@ -1,13 +1,10 @@
-# test-download_datasets.R
 library(testthat)
 library(withr)
 library(mockery)
 
 test_that("download_datasets works when id_station is NULL", {
   with_tempdir({
-
     download_datasets()
-
     expect_true(file.exists("datasets-raw/NH0472.csv"))
     expect_true(file.exists("datasets-raw/NH0910.csv"))
     expect_true(file.exists("datasets-raw/NH0046.csv"))
@@ -54,11 +51,9 @@ test_that("download_datasets handles non-existent directory", {
 
 test_that("download_datasets handles download errors", {
   with_tempdir({
-    # Mock download.file to simulate an error
     mock_download_file_error <- function(url, destfile, ...) {
       stop("Simulated download error")
     }
-    # Use mockery::stub to replace download.file with the mock function
     stub(download_datasets, 'download.file', mock_download_file_error)
     expect_error(
       download_datasets("NH0472"),
