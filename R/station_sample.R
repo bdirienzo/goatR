@@ -1,8 +1,8 @@
 #' Sample Weather Observation Data
 #'
-#' This dataset, named NH0472_sample, provides daily weather observations from a specific weather monitoring station (NH0472). It includes various meteorological variables such as temperature, wind speed, and radiation. It serves as a resource for climate studies and analysis of day-to-day weather patterns.
+#' This dataset, named station_sample, provides daily weather observations from a specific weather monitoring station (NH0472). It includes various meteorological variables such as temperature, wind speed, and radiation. It serves as a resource for climate studies and analysis of day-to-day weather patterns.
 #'
-#' @name NH0472_sample
+#' @name station_sample
 #' @docType data
 #'
 #' @format A data frame with the following columns:
@@ -37,7 +37,7 @@
 #' @details
 #' Each row represents daily observations from the NH0472 weather station. This dataset can be used to analyze seasonal and daily trends in weather parameters, including temperature variations, humidity levels, and wind conditions.
 #'
-#' @usage data(NH0472_sample)
+#' @usage data(station_sample)
 #'
 #' @examples
 #' data(NH0472_sample)
@@ -46,9 +46,9 @@
 #' # Example: Plotting temperature trends over time
 #' if (requireNamespace("ggplot2", quietly = TRUE)) {
 #'   library(ggplot2)
-#'   ggplot(NH0472_sample, aes(x = fecha, y = temperatura_abrigo_150cm)) +
+#'   ggplot(station_sample, aes(x = fecha, y = temperatura_abrigo_150cm)) +
 #'     geom_line() +
 #'     labs(title = "Temperature at 150 cm Over Time",
 #'          x = "Date", y = "Temperature (°C)")
 #' }
-"NH0472_sample"
+"station_sample"
