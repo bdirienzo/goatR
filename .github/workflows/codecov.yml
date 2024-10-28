@@ -10,8 +10,8 @@ jobs:
   R-CMD-check:
     runs-on: ubuntu-latest
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }} # Asegúrate de tener este token
 
     steps:
       - name: Check out the code
@@ -25,15 +25,11 @@ jobs:
           install.packages('remotes')
           remotes::install_deps(dependencies = TRUE)
 
-      - name: Run tests and generate JUnit report
+      - name: Run tests and upload coverage to Codecov
         run: |
-          install.packages('testthat')
-          Rscript -e "library(testthat); test_dir('tests/testthat', reporter = 'junit')"
+          install.packages('covr')
+          covr::codecov()  # Sube el reporte de cobertura a Codecov
 
-      - name: Upload test results to Codecov
-        if: ${{ !cancelled() }}
-        uses: codecov/test-results-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: junit.xml
-
+  env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
