@@ -29,3 +29,7 @@ jobs:
         run: |
           install.packages('covr')
           covr::codecov()  # Sube el reporte de cobertura a Codecov
+
+  env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
