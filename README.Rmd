@@ -23,7 +23,17 @@ knitr::opts_chunk$set(
 
 # Summary
 
-In this package, you will find various functions for working with meteorological data, as well as some datasets containing information from different weather stations.
+The **goatR** package provides a comprehensive toolkit for working with meteorological data from Argentine weather stations. It offers functions to download, read, and analyze weather datasets, enabling users to efficiently handle meteorological information for research, analysis, and visualization purposes.
+
+Key features of the package include:
+
+-   **Data Downloading Functions**: Easily download datasets from various Argentine weather stations using `download_datasets()`. This function allows you to specify a station ID to download data from a specific station or download all available datasets at once.
+
+-   **Data Reading Functions**: Read and import downloaded datasets into R with `read_datasets()`. This function supports reading data by station ID or from a specified file path, facilitating seamless integration of weather data into your workflow.
+
+-   **Data Analysis Tools**: While primarily focused on data retrieval, the package lays the groundwork for further data analysis and visualization. Users can leverage these datasets to perform statistical analyses, create visualizations, and develop predictive models.
+
+The **goatR** package is designed to simplify the process of obtaining and working with meteorological data, particularly for researchers, climatologists, and data enthusiasts interested in Argentine weather patterns. By streamlining data access and providing user-friendly functions, the package helps users focus on analysis rather than data preparation.
 
 # Installation
 
@@ -36,7 +46,7 @@ pak::pak("bdirienzo/goatR")
 
 If you encounter a bug or wish to request a new feature, please:
 
-1.  Check if the issue has already been reported in our [[issue tracker](%5Bhttps://github.com/bdirienzo/goatR/issues)](<https://github.com/your_username/your_repository/issues>).
+1.  Check if the issue has already been reported in our [issue tracker](https://github.com/bdirienzo/goatR/issues).
 
 2.  If not, please file an issue with a minimal reproducible example on [GitHub](https://github.com/bdirienzo/goatR/issues):
 
