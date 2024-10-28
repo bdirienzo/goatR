@@ -15,6 +15,8 @@ Downloads](https://cran.r-project.org/package=goatR)](https://cranlogs.r-pkg.org
 
 <!-- badges: end -->
 
+# Summary
+
 In this package, you will find various functions for working with
 meteorological data, as well as some datasets containing information
 from different weather stations.
