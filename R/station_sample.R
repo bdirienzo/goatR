@@ -40,8 +40,8 @@
 #' @usage data(station_sample)
 #'
 #' @examples
-#' data(NH0472_sample)
-#' head(NH0472_sample)
+#' data(station_sample)
+#' head(station_sample)
 #'
 #' # Example: Plotting temperature trends over time
 #' if (requireNamespace("ggplot2", quietly = TRUE)) {

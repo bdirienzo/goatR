@@ -44,8 +44,8 @@ This dataset, named station_sample, provides daily weather observations from a s
 Each row represents daily observations from the NH0472 weather station. This dataset can be used to analyze seasonal and daily trends in weather parameters, including temperature variations, humidity levels, and wind conditions.
 }
 \examples{
-data(NH0472_sample)
-head(NH0472_sample)
+data(station_sample)
+head(station_sample)
 
 # Example: Plotting temperature trends over time
 if (requireNamespace("ggplot2", quietly = TRUE)) {
