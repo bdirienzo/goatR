@@ -24,6 +24,7 @@ A ggplot object representing the plot.
 This function generates a plot showing the total monthly precipitation for multiple stations.
 }
 \examples{
+read_datasets("NH0472")
 monthly_precipitation_plot(NH0472)
 }
 \seealso{
