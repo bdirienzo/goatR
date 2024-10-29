@@ -1,14 +1,32 @@
-#' Monthly Precipitation Plot
+#' #' Monthly Precipitation Plot
 #'
-#' This function generates a plot showing the total monthly precipitation for multiple stations.
+#' Generates a bar plot illustrating the total monthly precipitation across multiple weather stations.
 #'
-#' @param ... One or more data frames, each containing data for a station. Each data frame must contain the columns 'fecha', 'id', and 'precipitacion_pluviometrica'.
-#' @param colors A vector specifying the colors to use for the plot. If not provided, dark colors will be generated.
-#' @param title The title of the plot. Defaults to "Accumulated Precipitation by Month" if not specified.
-#' @return A ggplot object representing the plot.
+#' This function accepts one or more data frames, each representing data from a different weather station. It aggregates the monthly precipitation data and visualizes it using a grouped bar chart. Users can customize the plot colors and title as needed.
+#'
+#' @param ... One or more data frames, each containing data for a weather station. Each data frame must include the following columns:
+#'   - **fecha** Date of the precipitation measurement. Should be in a format coercible to \code{Date}.
+#'   - **id** Identifier for the weather station.
+#'   - **precipitacion_pluviometrica** Numeric value representing the precipitation in millimeters.
+#'
+#'  You can pass multiple data frames separated by commas, e.g., "station1", "station2", "station3"
+#' @param colors Optional. A character vector specifying the colors to use for each station in the plot. If not provided, the function will generate a set of dark colors automatically. The vector should either be named with station IDs or have a length matching the number of stations.
+#' @param title Optional. A string specifying the title of the plot. Defaults to \code{"Accumulated Precipitation by Month"}.
+#'
+#' @return A \code{ggplot} object representing the total monthly precipitation for each station.
+#'
 #' @import dplyr
 #' @import ggplot2
-#' @seealso `goatR::download_datasets` to download datasets from Argentine weather stations, and `goatR::read_datasets` to read the downloaded datasets into R.
+#'
+#' @seealso goatR::download_datasets for downloading datasets from Argentine weather stations, and goatR::read_datasets for reading the downloaded datasets into R.
+#'
+#' @examples
+#' \dontrun{
+#' # Assuming you have two data frames: station1 and station2
+#' plot <- monthly_precipitation_plot(station1, station2, title = "Monthly Precipitation")
+#' print(plot)
+#' }
+#'
 #' @export
 monthly_precipitation_plot <- function(..., colors = NULL, title = "Accumulated Precipitation by Month") {
   data_list <- list(...)

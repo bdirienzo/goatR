@@ -2,7 +2,7 @@
 % Please edit documentation in R/monthly_precipitation_plot.R
 \name{monthly_precipitation_plot}
 \alias{monthly_precipitation_plot}
-\title{Monthly Precipitation Plot}
+\title{#' Monthly Precipitation Plot}
 \usage{
 monthly_precipitation_plot(
   ...,
@@ -11,18 +11,36 @@ monthly_precipitation_plot(
 )
 }
 \arguments{
-\item{...}{One or more data frames, each containing data for a station. Each data frame must contain the columns 'fecha', 'id', and 'precipitacion_pluviometrica'.}
+\item{...}{One or more data frames, each containing data for a weather station. Each data frame must include the following columns:
+\itemize{
+\item \strong{fecha} Date of the precipitation measurement. Should be in a format coercible to \code{Date}.
+\item \strong{id} Identifier for the weather station.
+\item \strong{precipitacion_pluviometrica} Numeric value representing the precipitation in millimeters.
+}
 
-\item{colors}{A vector specifying the colors to use for the plot. If not provided, dark colors will be generated.}
+You can pass multiple data frames separated by commas, e.g., "station1", "station2", "station3"}
 
-\item{title}{The title of the plot. Defaults to "Accumulated Precipitation by Month" if not specified.}
+\item{colors}{Optional. A character vector specifying the colors to use for each station in the plot. If not provided, the function will generate a set of dark colors automatically. The vector should either be named with station IDs or have a length matching the number of stations.}
+
+\item{title}{Optional. A string specifying the title of the plot. Defaults to \code{"Accumulated Precipitation by Month"}.}
 }
 \value{
-A ggplot object representing the plot.
+A \code{ggplot} object representing the total monthly precipitation for each station.
 }
 \description{
-This function generates a plot showing the total monthly precipitation for multiple stations.
+Generates a bar plot illustrating the total monthly precipitation across multiple weather stations.
+}
+\details{
+This function accepts one or more data frames, each representing data from a different weather station. It aggregates the monthly precipitation data and visualizes it using a grouped bar chart. Users can customize the plot colors and title as needed.
+}
+\examples{
+\dontrun{
+# Assuming you have two data frames: station1 and station2
+plot <- monthly_precipitation_plot(station1, station2, title = "Monthly Precipitation")
+print(plot)
+}
+
 }
 \seealso{
-\code{goatR::download_datasets} to download datasets from Argentine weather stations, and \code{goatR::read_datasets} to read the downloaded datasets into R.
+goatR::download_datasets for downloading datasets from Argentine weather stations, and goatR::read_datasets for reading the downloaded datasets into R.
 }
