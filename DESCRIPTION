@@ -17,12 +17,7 @@ LazyData: true
 Imports: 
     dplyr,
     ggplot2,
-    mockery,
-    readr,
-    testthat,
-    tidyr,
     utils,
-    withr
 Suggests: 
     knitr,
     rmarkdown
