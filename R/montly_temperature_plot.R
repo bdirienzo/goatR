@@ -24,30 +24,7 @@
 #'
 #' **RECOMENDATION:** Use this function in conjunction with our other functions available at @seealso
 #'
-#' @examples
-#' # Simple example using two sample data frames
-#'
-#' # Create sample data for two stations
-#' station1 <- data.frame(
-#'   fecha = seq.Date(from = as.Date("2021-01-01"), to = as.Date("2021-12-01"), by = "month"),
-#'   id = "Station1",
-#'   temperatura_abrigo_150cm = c(25, 26, 24, 22, 20, 18, 17, 19, 21, 23, 24, 25)
-#' )
-#'
-#' station2 <- data.frame(
-#'   fecha = seq.Date(from = as.Date("2021-01-01"), to = as.Date("2021-12-01"), by = "month"),
-#'   id = "Station2",
-#'   temperatura_abrigo_150cm = c(15, 16, 18, 19, 20, 22, 23, 21, 19, 17, 16, 15)
-#' )
-#'
-#' # Generate the plot
-#' p <- monthly_temperature_plot(
-#'   station1,
-#'   station2,
-#'   title = "Monthly Average Temperature Comparison"
-#' )
-#' print(p)
-#'
+#' @examples monthly_temperature_plot(NH0472, NH0439)
 #' @import dplyr
 #' @import ggplot2
 #' @seealso `goatR::download_datasets` to download datasets from Argentine weather stations, and `goatR::read_datasets` to read the downloaded datasets into R.

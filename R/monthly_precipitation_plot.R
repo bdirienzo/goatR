@@ -6,11 +6,10 @@
 #' @param colors A vector specifying the colors to use for the plot. If not provided, dark colors will be generated.
 #' @param title The title of the plot. Defaults to "Accumulated Precipitation by Month" if not specified.
 #' @return A ggplot object representing the plot.
-#' @examples
-#' monthly_precipitation_plot(NH0472)
-#'
+#' @examples monthly_precipitation_plot(NH0472)
 #' @import dplyr
 #' @import ggplot2
+#' @seealso `goatR::download_datasets` to download datasets from Argentine weather stations, and `goatR::read_datasets` to read the downloaded datasets into R.
 #' @export
 monthly_precipitation_plot <- function(..., colors = NULL, title = "Accumulated Precipitation by Month") {
   data_list <- list(...)
