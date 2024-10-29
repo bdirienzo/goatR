@@ -8,17 +8,17 @@
 A data frame with the following columns:
 
 \describe{
-\item{id}{Character. Unique identifier for each monitoring station (e.g., \code{A872999}).}
-\item{nombre}{Character. Name of the station, often indicating its function or affiliation (e.g., \verb{Instituto de Clima y Agua}).}
-\item{tipo}{Character. The type of weather monitoring equipment (e.g., \verb{Nimbus THP}).}
-\item{localidad}{Character. The locality or town where the station is located (e.g., \code{Hurlingham}).}
-\item{provincia}{Character. Province in which the station is located (e.g., \verb{Buenos Aires}, \verb{La Pampa}).}
-\item{lat}{Numeric. Latitude of the station in decimal degrees (e.g., \code{-36.54}).}
-\item{lon}{Numeric. Longitude of the station in decimal degrees (e.g., \code{-63.99}).}
-\item{altura}{Numeric. Altitude of the station above sea level, in meters (e.g., \code{165.0}).}
-\item{ubicacion}{Character. Additional descriptive information on the location, often including addresses or notable landmarks (e.g., \verb{Jardin Botanico Ragonese INTA}).}
-\item{desde}{POSIXct. Date when the station started operations, formatted in ISO 8601 (e.g., \verb{2000-01-04T00:00:00Z[UTC]}).}
-\item{hasta}{POSIXct. Date when the station ended operations (if applicable), formatted in ISO 8601 (e.g., \verb{2024-05-23T00:00:00Z[UTC]}).}
+\item{id}{Character. Unique identifier for each monitoring station (e.g., "A872999").}
+\item{nombre}{Character. Name of the station, often indicating its function or affiliation (e.g., "Instituto de Clima y Agua").}
+\item{tipo}{Character. The type of weather monitoring equipment (e.g., "Nimbus THP").}
+\item{localidad}{Character. The locality or town where the station is located (e.g., "Hurlingham").}
+\item{provincia}{Character. Province in which the station is located (e.g., "Buenos Aires", "La Pampa").}
+\item{lat}{Numeric. Latitude of the station in decimal degrees (e.g., "-36.54").}
+\item{lon}{Numeric. Longitude of the station in decimal degrees (e.g., "-63.99").}
+\item{altura}{Numeric. Altitude of the station above sea level, in meters (e.g., "165.0").}
+\item{ubicacion}{Character. Additional descriptive information on the location, often including addresses or notable landmarks (e.g., "Jardin Botanico Ragonese INTA").}
+\item{desde}{POSIXct. Date when the station started operations, formatted in ISO 8601 (e.g., "2000-01-04T00:00:00Z").}
+\item{hasta}{POSIXct. Date when the station ended operations (if applicable), formatted in ISO 8601 (e.g., "2024-05-23T00:00:00Z").}
 }
 }
 \usage{

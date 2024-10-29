@@ -9,34 +9,34 @@ monthly_temperature_plot(..., colors = NULL, title = "Temperature")
 \arguments{
 \item{...}{One or more data frames, each containing data for a weather station. Each data frame must include the following columns:
 \itemize{
-\item \strong{fecha}: Date column (\code{Date} or character) representing the date of the observation.
+\item \strong{fecha}: Date column ("Date" or character) representing the date of the observation.
 \item \strong{id}: Character or factor column serving as a unique identifier for the weather station.
 \item \strong{temperatura_abrigo_150cm}: Numeric column representing the temperature measurement at 150 cm height.
 }
 
-You can pass multiple data frames separated by commas, e.g., \code{station1}, \code{station2}, \code{station3}.}
+You can pass multiple data frames separated by commas, e.g., "station1", "station2", "station3".}
 
 \item{colors}{A named vector specifying the colors to use for each station in the plot. The names should correspond to station IDs. If \code{NULL}, a set of dark colors will be generated automatically.}
 
-\item{title}{The title of the plot. Defaults to \code{"Temperature"} if not specified.}
+\item{title}{The title of the plot. Defaults to "Temperature" if not specified.}
 }
 \value{
 A \code{ggplot} object representing the monthly average temperature plot.
 }
 \description{
-This function creates a line plot showing the monthly average of temperature measurements (\code{temperatura_abrigo_150cm}) for multiple Argentine weather stations.
+This function creates a line plot showing the monthly average of temperature measurements ("temperatura_abrigo_150cm") for multiple Argentine weather stations.
 }
 \details{
 The function performs the following steps:
 \enumerate{
 \item Validates that all inputs are data frames and contain the required columns.
-\item Converts the \code{fecha} column to \code{Date} type if necessary.
-\item Extracts the month from the \code{fecha} column and orders it according to the calendar.
+\item Converts the "fecha" column to "Date" type if necessary.
+\item Extracts the month from the "fecha" column and orders it according to the calendar.
 \item Calculates the monthly average temperature for each station.
 \item Generates a line plot with points, coloring each station differently.
 }
 
-\strong{RECOMENDATION:} Use this function in conjunction with our other functions available at @seealso
+\emph{RECOMMENDATION:} Use this function in conjunction with other functions available at @seealso
 }
 \seealso{
 \code{goatR::download_datasets} to download datasets from Argentine weather stations, and \code{goatR::read_datasets} to read the downloaded datasets into R.

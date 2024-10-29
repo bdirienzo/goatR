@@ -8,30 +8,41 @@
 A data frame with the following columns:
 
 \describe{
-\item{id}{Character. Identifier for the weather station (e.g., \code{NH0472}).}
-\item{fecha}{Date. Observation date in YYYY-MM-DD format (e.g., \code{1961-07-01}).}
-\item{temperatura_abrigo_150cm}{Numeric. Temperature at 150 cm under shelter, in degrees Celsius (e.g., \code{11.1}).}
-\item{temperatura_abrigo_150cm_maxima}{Numeric. Maximum daily temperature at 150 cm under shelter, in degrees Celsius (e.g., \code{13.4}).}
-\item{temperatura_abrigo_150cm_minima}{Numeric. Minimum daily temperature at 150 cm under shelter, in degrees Celsius (e.g., \code{8.8}).}
-\item{temperatura_intemperie_5cm_minima}{Numeric. Minimum daily temperature at 5 cm in open air, in degrees Celsius (e.g., \code{6.2}).}
-\item{temperatura_intemperie_50cm_minima}{Numeric. Minimum daily temperature at 50 cm in open air, in degrees Celsius (e.g., \code{4.5}).}
-\item{temperatura_suelo_5cm_media}{Numeric. Average daily soil temperature at 5 cm depth, in degrees Celsius (e.g., \code{10.0}).}
-\item{temperatura_suelo_10cm_media}{Numeric. Average daily soil temperature at 10 cm depth, in degrees Celsius (e.g., \code{9.8}).}
-\item{temperatura_inte_5cm}{Numeric. Temperature at 5 cm under cover, in degrees Celsius (e.g., \code{7.3}).}
-\item{temperatura_inte_50cm}{Numeric. Temperature at 50 cm under cover, in degrees Celsius (e.g., \code{6.1}).}
-\item{humedad_media}{Numeric. Average daily humidity percentage (e.g., \code{75.3}).}
-\item{humedad_maxima}{Numeric. Maximum daily humidity percentage (e.g., \code{95.0}).}
-\item{humedad_minima}{Numeric. Minimum daily humidity percentage (e.g., \code{60.5}).}
-\item{presion_media}{Numeric. Average daily atmospheric pressure, in hPa (e.g., \code{1015.6}).}
-\item{direccion_viento_1000cm}{Numeric. Wind direction at 10 m height, in degrees from north (e.g., \code{270}).}
-\item{velocidad_viento_maxima}{Numeric. Maximum daily wind speed, in m/s (e.g., \code{8.5}).}
-\item{radiacion_global}{Numeric. Global radiation in kJ/m² (e.g., \code{520.3}).}
-\item{radiacion_neta}{Numeric. Net radiation in kJ/m² (e.g., \code{300.4}).}
-\item{evaporacion_tanque}{Numeric. Daily tank evaporation in mm (e.g., \code{2.5}).}
-\item{evapotranspiracion_potencial}{Numeric. Potential evapotranspiration in mm (e.g., \code{4.0}).}
-\item{profundidad_napa}{Numeric. Depth of the water table in meters (e.g., \code{1.8}).}
-\item{horas_frio}{Numeric. Total daily cold hours (e.g., \code{15.6}).}
-\item{unidad_frio}{Numeric. Unit for cold hours, if applicable (e.g., \code{-}).}
+\item{id}{Character. Identifier for the weather station (e.g., "NH0472").}
+\item{fecha}{Date. Observation date in YYYY-MM-DD format (e.g., "1961-07-01").}
+\item{temperatura_abrigo_150cm}{Numeric. Temperature at 150 cm under shelter, in degrees Celsius (e.g., "11.1").}
+\item{temperatura_abrigo_150cm_maxima}{Numeric. Maximum daily temperature at 150 cm under shelter, in degrees Celsius (e.g., "13.4").}
+\item{temperatura_abrigo_150cm_minima}{Numeric. Minimum daily temperature at 150 cm under shelter, in degrees Celsius (e.g., "8.8").}
+\item{temperatura_intemperie_5cm_minima}{Numeric. Minimum daily temperature at 5 cm in open air, in degrees Celsius (e.g., "6.2").}
+\item{temperatura_intemperie_50cm_minima}{Numeric. Minimum daily temperature at 50 cm in open air, in degrees Celsius (e.g., "4.5").}
+\item{temperatura_suelo_5cm_media}{Numeric. Average daily soil temperature at 5 cm depth, in degrees Celsius (e.g., "10.0").}
+\item{temperatura_suelo_10cm_media}{Numeric. Average daily soil temperature at 10 cm depth, in degrees Celsius (e.g., "9.8").}
+\item{temperatura_inte_5cm}{Numeric. Temperature at 5 cm under cover, in degrees Celsius (e.g., "7.3").}
+\item{temperatura_intemperie_150cm_minima}{Numeric. Minimum daily temperature at 150 cm in open air, in degrees Celsius.}
+\item{humedad_suelo}{Numeric. Soil humidity percentage.}
+\item{precipitacion_pluviometrica}{Numeric. Daily rainfall in mm.}
+\item{granizo}{Logical. Indicator of hail occurrence (TRUE/FALSE).}
+\item{nieve}{Logical. Indicator of snow occurrence (TRUE/FALSE).}
+\item{heliofania_efectiva}{Numeric. Effective sunshine duration in hours.}
+\item{heliofania_relativa}{Numeric. Relative sunshine duration as a percentage.}
+\item{tesion_vapor_media}{Numeric. Average daily vapor tension in hPa.}
+\item{humedad_media}{Numeric. Average daily humidity percentage (e.g., "75.3").}
+\item{humedad_media_8_14_20}{Numeric. Average humidity at 8 AM, 2 PM, and 8 PM.}
+\item{rocio_medio}{Numeric. Average daily dew point temperature in degrees Celsius.}
+\item{duracion_follaje_mojado}{Numeric. Duration of wet foliage in hours.}
+\item{velocidad_viento_200cm_media}{Numeric. Average wind speed at 2 m height in m/s.}
+\item{direccion_viento_200cm}{Numeric. Wind direction at 2 m height in degrees from north.}
+\item{velocidad_viento_1000cm_media}{Numeric. Average wind speed at 10 m height in m/s.}
+\item{direccion_viento_1000cm}{Numeric. Wind direction at 10 m height in degrees from north.}
+\item{velocidad_viento_maxima}{Numeric. Maximum daily wind speed, in m/s (e.g., "8.5").}
+\item{presion_media}{Numeric. Average daily atmospheric pressure, in hPa (e.g., "1015.6").}
+\item{radiacion_global}{Numeric. Global radiation in kJ/m² (e.g., "520.3").}
+\item{radiacion_neta}{Numeric. Net radiation in kJ/m² (e.g., "300.4").}
+\item{evaporacion_tanque}{Numeric. Daily tank evaporation in mm (e.g., "2.5").}
+\item{evapotranspiracion_potencial}{Numeric. Potential evapotranspiration in mm (e.g., "4.0").}
+\item{profundidad_napa}{Numeric. Depth of the water table in meters (e.g., "1.8").}
+\item{horas_frio}{Numeric. Total daily cold hours (e.g., "15.6").}
+\item{unidad_frio}{Numeric. Unit for cold hours, if applicable (e.g., "-").}
 }
 }
 \usage{

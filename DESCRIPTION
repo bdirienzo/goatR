@@ -21,7 +21,8 @@ Imports:
     readr,
     testthat,
     tidyr,
-    utils
+    utils,
+    withr
 Suggests: 
     knitr,
     rmarkdown
