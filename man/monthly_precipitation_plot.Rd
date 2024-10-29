@@ -23,10 +23,6 @@ A ggplot object representing the plot.
 \description{
 This function generates a plot showing the total monthly precipitation for multiple stations.
 }
-\examples{
-read_datasets("NH0472")
-monthly_precipitation_plot(NH0472)
-}
 \seealso{
 \code{goatR::download_datasets} to download datasets from Argentine weather stations, and \code{goatR::read_datasets} to read the downloaded datasets into R.
 }
