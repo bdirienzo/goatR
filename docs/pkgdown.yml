@@ -5,7 +5,7 @@ pkgdown:
   homepage:
     title: "goatR: Herramientas para Datos Meteorológicos de Argentina"
     description: "Un conjunto de herramientas comprensivas para trabajar con datos meteorológicos de estaciones argentinas."
-    image: "man/figures/logo.png" # Ruta al logo de tu paquete
+    image: "dev/images/GOATR.png" # Ruta al logo de tu paquete
     image_alt: "Logo de goatR"
 
   # Configuración de la barra de navegación
