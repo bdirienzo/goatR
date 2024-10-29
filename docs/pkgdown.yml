@@ -1,6 +1,36 @@
-pandoc: '3.3'
-pkgdown: 2.1.1
-pkgdown_sha: ~
-articles:
-  Introduction: Introduction.html
+# pkgdown.yml
+
+pkgdown:
+  # Configuración de la página de inicio
+  homepage:
+    title: "goatR: Herramientas para Datos Meteorológicos de Argentina"
+    description: "Un conjunto de herramientas comprensivas para trabajar con datos meteorológicos de estaciones argentinas."
+    image: "man/figures/logo.png" # Ruta al logo de tu paquete
+    image_alt: "Logo de goatR"
+
+  # Configuración de la barra de navegación
+  navbar:
+    structure:
+      left:
+        - text: "Referencia"
+          href: reference/index.html
+        - text: "Vignettes"
+          href: articles/index.html
+        - text: "Instalación"
+          href: installation.html
+        - text: "FAQ"
+          href: faq.html # Página personalizada de Preguntas Frecuentes
+
+  # Personalización de estilos
+  style:
+    primary_color: "#2C3E50" # Color principal
+    navbar_background: "#34495E" # Fondo de la barra de navegación
+    footer_background: "#2C3E50" # Fondo del pie de página
+    font: "Arial, sans-serif" # Fuente personalizada
+
+  # Referencia a CSS personalizado
+  template:
+    css: "assets/css/custom.css"
+
+# Información adicional sobre la última construcción
 last_built: 2024-10-29T00:13Z
