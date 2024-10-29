@@ -7,14 +7,39 @@
 temperature_summary_table(...)
 }
 \arguments{
-\item{...}{Data frames representing temperature data for various stations. Each data frame should contain a column named "id" representing station identifiers, and a column named "temperatura_abrigo_150cm" representing temperature measurements at 150 cm height.}
+\item{...}{One or more data frames representing temperature data for various stations. Each data frame should contain:
+\itemize{
+\item \strong{"id"}: representing station identifiers.
+\item \strong{"temperatura_abrigo_150cm"}: representing temperature measurements at a height of 150 cm.
+}}
 }
 \value{
-A data frame summarizing the temperature statistics for each station, including average temperature, maximum and minimum temperature, standard deviation, and total number of days.
+A data frame summarizing the temperature statistics for each station, including:
+\itemize{
+\item Average temperature ('average_temperature')
+\item Maximum temperature ('max_temperature')
+\item Minimum temperature ('min_temperature')
+\item Standard deviation of temperature ('standard_deviation')
+\item Total number of days with temperature data ('total_days')
+}
 }
 \description{
-This function generates a summary table of temperature data from multiple stations.
+Generates a summary table of temperature data from multiple stations.
 }
 \details{
-The function combines the input data frames into a single data frame, validates the required columns, and then groups the data by station ID to compute the desired summary statistics. The required columns are "id" and "temperatura_abrigo_150cm". If any of the input data frames are missing these columns, an error will be thrown.
+The function \emph{temperature_summary_table()} takes one or more data frames as input, each containing temperature data from different weather stations, and returns a summary of the temperature statistics for each station. The required columns are: "id" for station identifiers and "temperatura_abrigo_150cm" for temperature measurements at 150 cm height.
+
+The function combines the input data frames into a single data frame, validates that the required columns are present, and groups the data by station ID to compute the summary statistics. If any input data frame lacks the required columns "id" or "temperatura_abrigo_150cm", the function will stop with an error message.
+
+\strong{WARNING:} This function will stop if the required columns are not found in any of the data frames provided.
+}
+\examples{
+# Example of using temperature_summary_table with two data frames
+df1 <- data.frame(id = c(1, 1, 2, 2), temperatura_abrigo_150cm = c(15, 18, 20, 22))
+df2 <- data.frame(id = c(1, 3, 3, 3), temperatura_abrigo_150cm = c(17, 21, 19, 16))
+temperature_summary_table(df1, df2)
+
+}
+\seealso{
+\code{goatR::read_datasets} to load and view the temperature datasets.
 }
