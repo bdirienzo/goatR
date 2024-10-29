@@ -24,16 +24,16 @@
 #' @details
 #' Each row in the dataset represents a unique weather monitoring station. The data includes spatial and temporal coverage, which can be used for mapping and analyzing the operational status of weather stations across different regions.
 #'
-#' @usage data(metadatos)
+#' @usage data(metadata)
 #'
 #' @examples
-#' data(metadatos)
-#' head(metadatos)
+#' data(metadata)
+#' head(metadata)
 #'
 #' # Example: Plotting the stations on a map using latitude and longitude
 #' if (requireNamespace("ggplot2", quietly = TRUE)) {
 #'   library(ggplot2)
-#'   ggplot(metadatos, aes(x = lon, y = lat)) +
+#'   ggplot(metadata, aes(x = lon, y = lat)) +
 #'     geom_point() +
 #'     labs(title = "Locations of Weather Monitoring Stations",
 #'          x = "Longitude", y = "Latitude")
