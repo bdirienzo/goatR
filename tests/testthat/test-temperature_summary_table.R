@@ -57,4 +57,70 @@ test_that("temperature_summary_table stops with missing required columns", {
     regexp = "The following columns are missing in the data: id, temperatura_abrigo_150cm"
   )
 })
+test_that("monthly_temperature_plot stops if inputs are not data frames", {
+  df1 <- data.frame(fecha = as.Date(c("2021-01-01", "2021-02-01")),
+                    id = c("Station1", "Station1"),
+                    temperatura_abrigo_150cm = c(20, 22))
+  not_a_df <- list(fecha = as.Date(c("2021-01-01", "2021-02-01")),
+                   id = c("Station2", "Station2"),
+                   temperatura_abrigo_150cm = c(18, 19))
+
+  expect_error(
+    monthly_temperature_plot(df1, not_a_df),
+    regexp = "All inputs must be data frames."
+  )
+})
+
+test_that("monthly_temperature_plot repeats dark_colors vector to match stations", {
+  df1 <- data.frame(fecha = as.Date(c("2021-01-01", "2021-02-01")),
+                    id = c("Station1", "Station1"),
+                    temperatura_abrigo_150cm = c(20, 22))
+  df2 <- data.frame(fecha = as.Date(c("2021-01-01", "2021-02-01")),
+                    id = c("Station2", "Station2"),
+                    temperatura_abrigo_150cm = c(18, 19))
+
+  dark_colors <- setNames(c("darkblue", "darkgreen"), c("Station1", "Station2"))
+
+  expect_silent(monthly_temperature_plot(df1, df2, colors = dark_colors))
+})
+
+
+test_that("monthly_temperature_plot assigns colors automatically if NULL", {
+  df1 <- data.frame(fecha = as.Date(c("2021-01-01", "2021-02-01")),
+                    id = c("Station1", "Station1"),
+                    temperatura_abrigo_150cm = c(20, 22))
+  df2 <- data.frame(fecha = as.Date(c("2021-01-01", "2021-02-01")),
+                    id = c("Station2", "Station2"),
+                    temperatura_abrigo_150cm = c(18, 19))
+
+  expect_silent(monthly_temperature_plot(df1, df2, colors = NULL))
+})
+
+test_that("monthly_temperature_plot assigns correct number of colors", {
+  df1 <- data.frame(fecha = as.Date(c("2021-01-01", "2021-02-01")),
+                    id = c("Station1", "Station1"),
+                    temperatura_abrigo_150cm = c(20, 22))
+  df2 <- data.frame(fecha = as.Date(c("2021-01-01", "2021-02-01")),
+                    id = c("Station2", "Station2"),
+                    temperatura_abrigo_150cm = c(18, 19))
+  colors <- c("red", "green")
+
+  expect_silent(monthly_temperature_plot(df1, df2, colors = colors))
+})
+
+test_that("monthly_temperature_plot errors if colors vector is invalid", {
+  df1 <- data.frame(fecha = as.Date(c("2021-01-01", "2021-02-01")),
+                    id = c("Station1", "Station1"),
+                    temperatura_abrigo_150cm = c(20, 22))
+  df2 <- data.frame(fecha = as.Date(c("2021-01-01", "2021-02-01")),
+                    id = c("Station2", "Station2"),
+                    temperatura_abrigo_150cm = c(18, 19))
+
+  colors <- c("red")
+
+  expect_error(
+    monthly_temperature_plot(df1, df2, colors = colors),
+    regexp = "Colors vector must be named with station IDs or match the number of stations."
+  )
+})
 
