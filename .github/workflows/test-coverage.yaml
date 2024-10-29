@@ -30,16 +30,14 @@ jobs:
 
       - name: Test coverage
         run: |
-          cov <- covr::package_coverage(
-            quiet = FALSE,
-            clean = FALSE,
-            install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
-          )
+          cov <- covr::package_coverage(quiet = FALSE, clean = FALSE)
           covr::to_cobertura(cov)
         shell: Rscript {0}
 
       - name: Check for coverage file
-        run: ls -la ./cobertura.xml  # Verifica que el archivo se generó correctamente
+        run: |
+          echo "Checking if cobertura.xml file exists..."
+          ls -la ./cobertura.xml
 
       - uses: codecov/codecov-action@v4
         with:
@@ -52,7 +50,6 @@ jobs:
       - name: Show testthat output
         if: always()
         run: |
-          ## --------------------------------------------------------------------
           find '${{ runner.temp }}/package' -name 'testthat.Rout*' -exec cat '{}' \; || true
         shell: bash
 
