@@ -38,12 +38,15 @@ jobs:
           covr::to_cobertura(cov)
         shell: Rscript {0}
 
+      - name: Check for coverage file
+        run: ls -la ./cobertura.xml  # Verifica que el archivo se generó correctamente
+
       - uses: codecov/codecov-action@v4
         with:
-          fail_ci_if_error: ${{ github.event_name != 'pull_request' && true || false }}
-          file: ./cobertura.xml
+          fail_ci_if_error: true   # Cambiado a true para asegurar ejecución
+          file: ./cobertura.xml    # Asegúrate de que el archivo es correcto
           plugin: noop
-          disable_search: true
+          disable_search: false    # Deshabilitado para permitir búsqueda automática
           token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Show testthat output
