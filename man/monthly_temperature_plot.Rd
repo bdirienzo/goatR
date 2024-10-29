@@ -39,6 +39,8 @@ The function performs the following steps:
 \strong{RECOMENDATION:} Use this function in conjunction with our other functions available at @seealso
 }
 \examples{
+read_datasets("NH0472")
+read_datasets("NH0439")
 monthly_temperature_plot(NH0472, NH0439)
 }
 \seealso{

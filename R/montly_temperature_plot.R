@@ -24,7 +24,10 @@
 #'
 #' **RECOMENDATION:** Use this function in conjunction with our other functions available at @seealso
 #'
-#' @examples monthly_temperature_plot(NH0472, NH0439)
+#' @examples
+#' read_datasets("NH0472")
+#' read_datasets("NH0439")
+#' monthly_temperature_plot(NH0472, NH0439)
 #' @import dplyr
 #' @import ggplot2
 #' @seealso `goatR::download_datasets` to download datasets from Argentine weather stations, and `goatR::read_datasets` to read the downloaded datasets into R.
