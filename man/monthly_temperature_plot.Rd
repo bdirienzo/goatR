@@ -2,20 +2,67 @@
 % Please edit documentation in R/montly_temperature_plot.R
 \name{monthly_temperature_plot}
 \alias{monthly_temperature_plot}
-\title{Generate a Monthly Temperature Plot}
+\title{Generate a Monthly Average Temperature Plot for Multiple Stations}
 \usage{
 monthly_temperature_plot(..., colors = NULL, title = "Temperature")
 }
 \arguments{
-\item{...}{One or more data frames, each containing data for a station. Each data frame must contain the columns 'fecha', 'id', and 'temperatura_abrigo_150cm'.}
+\item{...}{One or more data frames, each containing data for a weather station. Each data frame must include the following columns:
+\itemize{
+\item \strong{fecha}: Date column (\code{Date} or character) representing the date of the observation.
+\item \strong{id}: Character or factor column serving as a unique identifier for the weather station.
+\item \strong{temperatura_abrigo_150cm}: Numeric column representing the temperature measurement at 150 cm height.
+}
 
-\item{colors}{A vector specifying the colors to use for the plot. If not provided, dark colors will be generated.}
+You can pass multiple data frames separated by commas, e.g., \code{station1}, \code{station2}, \code{station3}.}
 
-\item{title}{The title of the plot. Defaults to "Temperature" if not specified.}
+\item{colors}{A named vector specifying the colors to use for each station in the plot. The names should correspond to station IDs. If \code{NULL}, a set of dark colors will be generated automatically.}
+
+\item{title}{The title of the plot. Defaults to \code{"Temperature"} if not specified.}
 }
 \value{
-A ggplot object representing the plot.
+A \code{ggplot} object representing the monthly average temperature plot.
 }
 \description{
-This function generates a plot showing the monthly average of 'temperatura_abrigo_150cm' for multiple stations.
+This function creates a line plot showing the monthly average of temperature measurements (\code{temperatura_abrigo_150cm}) for multiple Argentine weather stations.
+}
+\details{
+The function performs the following steps:
+\enumerate{
+\item Validates that all inputs are data frames and contain the required columns.
+\item Converts the \code{fecha} column to \code{Date} type if necessary.
+\item Extracts the month from the \code{fecha} column and orders it according to the calendar.
+\item Calculates the monthly average temperature for each station.
+\item Generates a line plot with points, coloring each station differently.
+}
+
+\strong{RECOMENDATION:} Use this function in conjunction with our other functions available at @seealso
+}
+\examples{
+# Simple example using two sample data frames
+
+# Create sample data for two stations
+station1 <- data.frame(
+  fecha = seq.Date(from = as.Date("2021-01-01"), to = as.Date("2021-12-01"), by = "month"),
+  id = "Station1",
+  temperatura_abrigo_150cm = c(25, 26, 24, 22, 20, 18, 17, 19, 21, 23, 24, 25)
+)
+
+station2 <- data.frame(
+  fecha = seq.Date(from = as.Date("2021-01-01"), to = as.Date("2021-12-01"), by = "month"),
+  id = "Station2",
+  temperatura_abrigo_150cm = c(15, 16, 18, 19, 20, 22, 23, 21, 19, 17, 16, 15)
+)
+
+# Generate the plot
+p <- monthly_temperature_plot(
+  station1,
+  station2,
+  title = "Monthly Average Temperature Comparison"
+)
+print(p)
+
+}
+\seealso{
+\code{goatR::download_datasets} to download datasets from Argentine weather stations, and \code{goatR::read_datasets} to read the downloaded datasets into R.
 }

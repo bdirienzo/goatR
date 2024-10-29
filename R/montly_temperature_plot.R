@@ -1,13 +1,56 @@
-#' Generate a Monthly Temperature Plot
+#' Generate a Monthly Average Temperature Plot for Multiple Stations
 #'
-#' This function generates a plot showing the monthly average of 'temperatura_abrigo_150cm' for multiple stations.
+#' This function creates a line plot showing the monthly average of temperature measurements (`temperatura_abrigo_150cm`) for multiple Argentine weather stations.
 #'
-#' @param ... One or more data frames, each containing data for a station. Each data frame must contain the columns 'fecha', 'id', and 'temperatura_abrigo_150cm'.
-#' @param colors A vector specifying the colors to use for the plot. If not provided, dark colors will be generated.
-#' @param title The title of the plot. Defaults to "Temperature" if not specified.
-#' @return A ggplot object representing the plot.
+#' @param ... One or more data frames, each containing data for a weather station. Each data frame must include the following columns:
+#'   - **fecha**: Date column (`Date` or character) representing the date of the observation.
+#'   - **id**: Character or factor column serving as a unique identifier for the weather station.
+#'   - **temperatura_abrigo_150cm**: Numeric column representing the temperature measurement at 150 cm height.
+#'
+#'   You can pass multiple data frames separated by commas, e.g., `station1`, `station2`, `station3`.
+#'
+#' @param colors A named vector specifying the colors to use for each station in the plot. The names should correspond to station IDs. If `NULL`, a set of dark colors will be generated automatically.
+#' @param title The title of the plot. Defaults to `"Temperature"` if not specified.
+#'
+#' @return A `ggplot` object representing the monthly average temperature plot.
+#'
+#' @details
+#' The function performs the following steps:
+#' 1. Validates that all inputs are data frames and contain the required columns.
+#' 2. Converts the `fecha` column to `Date` type if necessary.
+#' 3. Extracts the month from the `fecha` column and orders it according to the calendar.
+#' 4. Calculates the monthly average temperature for each station.
+#' 5. Generates a line plot with points, coloring each station differently.
+#'
+#' **RECOMENDATION:** Use this function in conjunction with our other functions available at @seealso
+#'
+#' @examples
+#' # Simple example using two sample data frames
+#'
+#' # Create sample data for two stations
+#' station1 <- data.frame(
+#'   fecha = seq.Date(from = as.Date("2021-01-01"), to = as.Date("2021-12-01"), by = "month"),
+#'   id = "Station1",
+#'   temperatura_abrigo_150cm = c(25, 26, 24, 22, 20, 18, 17, 19, 21, 23, 24, 25)
+#' )
+#'
+#' station2 <- data.frame(
+#'   fecha = seq.Date(from = as.Date("2021-01-01"), to = as.Date("2021-12-01"), by = "month"),
+#'   id = "Station2",
+#'   temperatura_abrigo_150cm = c(15, 16, 18, 19, 20, 22, 23, 21, 19, 17, 16, 15)
+#' )
+#'
+#' # Generate the plot
+#' p <- monthly_temperature_plot(
+#'   station1,
+#'   station2,
+#'   title = "Monthly Average Temperature Comparison"
+#' )
+#' print(p)
+#'
 #' @import dplyr
 #' @import ggplot2
+#' @seealso `goatR::download_datasets` to download datasets from Argentine weather stations, and `goatR::read_datasets` to read the downloaded datasets into R.
 #' @export
 monthly_temperature_plot <- function(..., colors = NULL, title = "Temperature") {
   data_list <- list(...)
@@ -50,7 +93,7 @@ monthly_temperature_plot <- function(..., colors = NULL, title = "Temperature") 
     }
   }
   p <- ggplot(data_summary, aes(x = month, y = average_temperature, color = as.factor(id), group = id)) +
-    geom_line(size = 1.2) +
+    geom_line(linewidth = 1.2) +
     geom_point(size = 2) +
     scale_color_manual(values = colors) +
     labs(title = title, x = "Month", y = "Average Temperature (°C)", color = "Station") +
