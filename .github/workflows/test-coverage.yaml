@@ -1,5 +1,4 @@
 # Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
-# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
 on:
   push:
     branches: [main, master]
@@ -25,7 +24,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::covr, any::xml2
+          extra-packages: any::covr, any::xml2, any::mockery  # Se agregó mockery aquí
           needs: coverage
 
       - name: Test coverage
@@ -41,10 +40,10 @@ jobs:
 
       - uses: codecov/codecov-action@v4
         with:
-          fail_ci_if_error: true   # Cambiado a true para asegurar ejecución
-          file: ./coverage.xml     # Ahora usando el nombre coverage.xml
+          fail_ci_if_error: true
+          file: ./coverage.xml
           plugin: noop
-          disable_search: false    # Deshabilitado para permitir búsqueda automática
+          disable_search: false
           token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Show testthat output
