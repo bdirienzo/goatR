@@ -22,7 +22,7 @@ A data frame with the following columns:
 }
 }
 \usage{
-data(metadatos)
+data(metadata)
 }
 \description{
 This dataset contains metadata about various weather monitoring stations, including their locations, types, and operational details. It is a useful resource for researchers interested in geospatial and temporal analysis of weather data collection across different provinces.
@@ -31,13 +31,13 @@ This dataset contains metadata about various weather monitoring stations, includ
 Each row in the dataset represents a unique weather monitoring station. The data includes spatial and temporal coverage, which can be used for mapping and analyzing the operational status of weather stations across different regions.
 }
 \examples{
-data(metadatos)
-head(metadatos)
+data(metadata)
+head(metadata)
 
 # Example: Plotting the stations on a map using latitude and longitude
 if (requireNamespace("ggplot2", quietly = TRUE)) {
   library(ggplot2)
-  ggplot(metadatos, aes(x = lon, y = lat)) +
+  ggplot(metadata, aes(x = lon, y = lat)) +
     geom_point() +
     labs(title = "Locations of Weather Monitoring Stations",
          x = "Longitude", y = "Latitude")
