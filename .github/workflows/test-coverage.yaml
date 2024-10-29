@@ -31,18 +31,18 @@ jobs:
       - name: Test coverage
         run: |
           cov <- covr::package_coverage(quiet = FALSE, clean = FALSE)
-          covr::to_cobertura(cov)
+          covr::to_cobertura(cov, file = "coverage.xml")
         shell: Rscript {0}
 
       - name: Check for coverage file
         run: |
-          echo "Checking if cobertura.xml file exists..."
-          ls -la ./cobertura.xml
+          echo "Checking if coverage.xml file exists..."
+          ls -la ./coverage.xml
 
       - uses: codecov/codecov-action@v4
         with:
           fail_ci_if_error: true   # Cambiado a true para asegurar ejecución
-          file: ./cobertura.xml    # Asegúrate de que el archivo es correcto
+          file: ./coverage.xml     # Ahora usando el nombre coverage.xml
           plugin: noop
           disable_search: false    # Deshabilitado para permitir búsqueda automática
           token: ${{ secrets.CODECOV_TOKEN }}
