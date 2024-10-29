@@ -63,7 +63,7 @@ In addition to visualizations, goatR also allows you to generate summary tables 
 
 ```{r example-summary}
 # Generate a summary table for temperature
-temp_summary <- goatR::temperature_summary_table("NH0472")
+temp_summary <- goatR::temperature_summary_table(NH0472)
 
 # Display the summary table
 temp_summary
