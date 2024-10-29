@@ -15,7 +15,9 @@ Downloads](https://cran.r-project.org/package=goatR)](https://cranlogs.r-pkg.org
 [![R-CMD-check](https://github.com/bdirienzo/goatR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/bdirienzo/goatR/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/bdirienzo/goatR/graph/badge.svg)](https://app.codecov.io/gh/bdirienzo/goatR)
-
+[![R-CMD-check](https://github.com/bdirienzo/goatR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/bdirienzo/goatR/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/bdirienzo/goatR/graph/badge.svg)](https://app.codecov.io/gh/bdirienzo/goatR)
 <!-- badges: end -->
 
 # Summary
