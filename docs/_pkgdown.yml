@@ -1,62 +1,27 @@
-url: https://rindec.github.io/eph/
-
-lang: es
-
-home:
-  title: Paquete de herramientas para la Encuesta Permanente de Hogares
-
-authors:
-  Diego Kozlowski:
-    href: "https://github.com/DiegoKoz"
-  Pablo Tiscornia:
-    href: "https://github.com/pablotis"
-  Guido Weksler:
-    href: "https://github.com/Guidowe"
-  Natsumi Shokida:
-    href: "https://github.com/natsushok"
-  German Rosati:
-    href: "https://github.com/gefero"
-  Carolina Pradier:
-    href: "https://github.com/caropradier"
-  Juan Gabriel Juara:
-    href: "https://github.com/jgjuara"
-
-destination: docs
-
-toc:
-  depth: 2
+url: https://goatr.netlify.app
 template:
-  params:
-    bootswatch: united
-    ganalytics: UA-122515754-3
+  bootstrap: 5
+  bootswatch: flatly
+lang: es
 navbar:
-  type: inverse
-
-
-reference:
-- title: Descarga y recodificación
-  desc:  Funciones para descargar los datos de la encuesta y recodificar sus variables.
-  contents:
-  - get_microdata
-  - starts_with("organize")
-  - get_total_urbano
-  - get_eahu
-- title: Tablas auxiliares
-  desc:  Tablas auxiliares para la recodificacion y otros calculos frecuentes.
-  contents:
-  - get_poverty_lines
-  - adulto_equivalente
-  - starts_with("diccionario")
-  - errores_muestrales
-  - CNO
-  - caes
-  - centroides_aglomerados
-- title: Procesamiento
-  desc:  Funciones para facilitar procesamientos básicos de la base de datos (incluyendo mapeo)
-  contents:
-  - starts_with("calculate")
-  - starts_with("map")
-- title: Ejemplos y bases de juguete
-  contents:
-  - starts_with("toy")
-  - canastas_reg_example
+  structure:
+    left:
+    - home
+    - getstarted
+    - articles
+    - reference
+    - news
+    right:
+    - twitter
+    - github
+  components:
+    home:
+      icon: fa-home
+      href: index.html
+    twitter:
+      icon: fa-twitter
+      href: https://twitter.com/mrqtsp
+      aria-label: Twitter
+    github:
+      icon: fa-github
+      href: https://github.com/ropensci/karel
