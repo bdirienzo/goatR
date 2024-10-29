@@ -14,6 +14,8 @@ Status](https://github.com/bdirienzo/goatR/actions)](https://github.com/bdirienz
 Downloads](https://cran.r-project.org/package=goatR)](https://cranlogs.r-pkg.org/badges/grand-total/goatR)
 [![Codecov test
 coverage](https://codecov.io/gh/bdirienzo/goatR/graph/badge.svg)](https://app.codecov.io/gh/bdirienzo/goatR)
+[![Netlify
+Status](https://api.netlify.com/api/v1/badges/aac096d2-9071-4b1e-bff6-70804a0b94d0/deploy-status)](https://app.netlify.com/sites/goatr/deploys)
 <!-- badges: end -->
 
 # Summary
