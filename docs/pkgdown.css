@@ -1,17 +1,17 @@
 /* Fondo */
 body {
-  background-color: white; /* Crema para el fondo */
+  background-color: #F7F7F7; /* Crema para el fondo */
   color: #333333; /* Gris oscuro para el texto */
 }
 
 /* Enlaces */
 a {
-  color: #486f99; /* Celeste pastel */
+  color: #A0C1D1; /* Celeste pastel */
   text-decoration: none;
 }
 
 a:hover {
-  color: #black; /* Un poco más oscuro en hover */
+  color: #6CB3D1; /* Un poco más oscuro en hover */
   text-decoration: underline;
 }
 
@@ -33,16 +33,16 @@ button:hover, .btn:hover {
 
 /* Encabezados */
 h1, h2, h3, h4, h5, h6 {
-  color: #darkgray; /* Celeste pastel */
+  color: #A0C1D1; /* Celeste pastel */
   margin-bottom: 15px;
 }
 
 /* Footer */
 footer {
-  background-color: #white; /* Verde pastel */
+  background-color: #C4E7D4; /* Verde pastel */
   color: #333333;
   padding: 20px;
-  border-top: 1px solid #white;
+  border-top: 1px solid #D3D3D3;
 }
 
 /* Dropdown menus */
