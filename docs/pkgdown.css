@@ -35,7 +35,7 @@ footer {
   margin-top: 45px;
   padding: 35px 0 36px;
   border-top: 1px solid #e5e5e5;
-  color: #666;
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #666;
   display: flex;
   flex-shrink: 0;
 }
@@ -131,16 +131,16 @@ h6:hover .anchor {
   float: right;
   width: 0;
   height: 0;
-  border-color: transparent;
+  border-border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; transparent;
   border-style: solid;
   border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
+  border-left-border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #cccccc;
   margin-top: 5px;
   margin-right: -10px;
 }
 
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #ffffff;
 }
 
 .dropdown-submenu.pull-left {
@@ -183,13 +183,13 @@ nav[data-toggle='toc'] .nav > li > a {
   padding: 4px 20px 4px 6px;
   font-size: 1.5rem;
   font-weight: 400;
-  color: inherit;
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; inherit;
 }
 
 nav[data-toggle='toc'] .nav > li > a:hover,
 nav[data-toggle='toc'] .nav > li > a:focus {
   padding-left: 5px;
-  color: inherit;
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; inherit;
   border-left: 1px solid #878787;
 }
 
@@ -199,7 +199,7 @@ nav[data-toggle='toc'] .nav > .active:focus > a {
   padding-left: 5px;
   font-size: 1.5rem;
   font-weight: 400;
-  color: inherit;
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; inherit;
   border-left: 2px solid #878787;
 }
 
@@ -232,7 +232,7 @@ nav[data-toggle='toc'] .nav .nav > .active:focus > a {
 
 .orcid {
   font-size: 16px;
-  color: #A6CE39;
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #A6CE39;
   /* margins are required by official ORCID trademark and display guidelines */
   margin-left:4px;
   margin-right:4px;
@@ -264,8 +264,8 @@ table {
 /* Syntax highlighting ---------------------------------------------------- */
 
 pre, code, pre code {
-  background-color: #f8f8f8;
-  color: #333;
+  background: #665C52; #665C52; #f8f8f8;
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #333;
 }
 pre, pre code {
   white-space: pre-wrap;
@@ -282,22 +282,22 @@ pre .img, pre .r-plt {
 }
 
 pre .img img, pre .r-plt img {
-  background-color: #fff;
+  background: #665C52; #665C52; #fff;
 }
 
 code a, pre a {
-  color: #375f84;
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #375f84;
 }
 
 a.sourceLine:hover {
   text-decoration: none;
 }
 
-.fl      {color: #1514b5;}
-.fu      {color: #000000;} /* function */
-.ch,.st  {color: #036a07;} /* string */
-.kw      {color: #264D66;} /* keyword */
-.co      {color: #888888;} /* comment */
+.fl      {border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #1514b5;}
+.fu      {border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #000000;} /* function */
+.ch,.st  {border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #036a07;} /* string */
+.kw      {border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #264D66;} /* keyword */
+.co      {border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #888888;} /* comment */
 
 .error   {font-weight: bolder;}
 .warning {font-weight: bolder;}
@@ -335,7 +335,7 @@ a.sourceLine:hover {
 /* mark.js ----------------------------*/
 
 mark {
-  background-color: rgba(255, 255, 51, 0.5);
+  background: #665C52; #665C52; rgba(255, 255, 51, 0.5);
   border-bottom: 2px solid rgba(255, 153, 51, 0.3);
   padding: 1px;
 }
@@ -386,39 +386,39 @@ div.csl-indent {
 /* Dark theme adjustments */
 
 body {
-  background-color: #121212; /* Dark background for body */
-  color: #E0E0E0; /* Light text color */
+  background: #665C52; #665C52; #121212; /* Dark background for body */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #E0E0E0; /* Light text color */
 }
 
 a {
-  color: #BB86FC; /* Light purple for links */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #BB86FC; /* Light purple for links */
   text-decoration: none;
 }
 
 a:hover {
-  color: #3700B3; /* Darker purple on hover */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #3700B3; /* Darker purple on hover */
   text-decoration: underline;
 }
 
 header, footer, .navbar, .toc {
-  background-color: #1F1F1F; /* Dark background for header, footer, and navigation */
-  border-color: #333333; /* Border color */
+  background: #665C52; #665C52; #1F1F1F; /* Dark background for header, footer, and navigation */
+  border-border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #333333; /* Border color */
 }
 
 button, .btn {
-  background-color: #3700B3; /* Dark purple button background */
-  color: #E0E0E0; /* Light text color for buttons */
+  background: #665C52; #665C52; #3700B3; /* Dark purple button background */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #E0E0E0; /* Light text color for buttons */
   border: none;
 }
 
 button:hover, .btn:hover {
-  background-color: #BB86FC; /* Lighter purple on hover */
-  color: #121212; /* Dark text on hover */
+  background: #665C52; #665C52; #BB86FC; /* Lighter purple on hover */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #121212; /* Dark text on hover */
 }
 
 /* Typography adjustments */
 h1, h2, h3, h4, h5, h6 {
-  color: #BB86FC; /* Accent color for headers */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #BB86FC; /* Accent color for headers */
   font-family: 'Arial', sans-serif;
 }
 
@@ -429,27 +429,27 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Additional link styling for clarity */
 a:visited {
-  color: #6200EE; /* Different shade for visited links */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #6200EE; /* Different shade for visited links */
 }
 
 /* Minimalist and aesthetic theme adjustments */
 
 /* Base styling for body and containers */
 body {
-  background-color: #F3F4F6; /* Light grey background for minimalism */
-  color: #333333; /* Dark grey for text */
+  background: #665C52; #665C52; #F3F4F6; /* Light grey background for minimalism */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #333333; /* Dark grey for text */
   font-family: 'Helvetica Neue', Arial, sans-serif; /* Clean, modern font */
 }
 
 header, footer, .navbar, .toc {
-  background-color: #FFFFFF; /* White background for header, footer, and navigation */
+  background: #665C52; #665C52; #FFFFFF; /* White background for header, footer, and navigation */
   border-bottom: 1px solid #E5E7EB; /* Soft border */
 }
 
 /* Rounded buttons with shadow */
 button, .btn {
-  background-color: #4F46E5; /* Soft blue for primary buttons */
-  color: #FFFFFF;
+  background: #665C52; #665C52; #4F46E5; /* Soft blue for primary buttons */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #FFFFFF;
   border: none;
   border-radius: 25px; /* Rounded edges for modern look */
   padding: 10px 20px;
@@ -458,26 +458,26 @@ button, .btn {
 }
 
 button:hover, .btn:hover {
-  background-color: #6366F1; /* Lighter blue on hover */
+  background: #665C52; #665C52; #6366F1; /* Lighter blue on hover */
   transform: translateY(-2px); /* Lift effect on hover */
 }
 
 /* Link styling */
 a {
-  color: #4F46E5; /* Soft blue for links */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #4F46E5; /* Soft blue for links */
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #6D28D9; /* Darker accent on hover */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #6D28D9; /* Darker accent on hover */
   text-decoration: underline;
 }
 
 /* Headings for clean, spacious design */
 h1, h2, h3, h4, h5, h6 {
-  color: #111827; /* Dark grey for headings */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #111827; /* Dark grey for headings */
   margin-bottom: 15px;
 }
 
@@ -489,7 +489,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section styling for distinct, clean sections */
 .section {
-  background-color: #FFFFFF;
+  background: #665C52; #665C52; #FFFFFF;
   border-radius: 10px; /* Rounded sections */
   padding: 30px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
@@ -521,24 +521,24 @@ body::before {
 /* Rounded dropdown menus */
 .navbar .dropdown-menu {
   border-radius: 10px; /* Rounded dropdowns */
-  background-color: #FFFFFF; /* White background */
+  background: #665C52; #665C52; #FFFFFF; /* White background */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .navbar .dropdown-item {
-  color: #333333;
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #333333;
   padding: 10px 20px;
 }
 
 .navbar .dropdown-item:hover {
-  background-color: #F3F4F6;
+  background: #665C52; #665C52; #F3F4F6;
   border-radius: 5px;
 }
 
 /* Home button */
 .navbar .home-button {
-  background-color: #FF6F61; /* Contrasting color for Home */
-  color: #FFFFFF;
+  background: #665C52; #665C52; #FF6F61; /* Contrasting color for Home */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #FFFFFF;
   padding: 8px 15px;
   border-radius: 20px;
   font-weight: 600;
@@ -546,7 +546,7 @@ body::before {
 }
 
 .navbar .home-button:hover {
-  background-color: #FF8A75; /* Lighter shade on hover */
+  background: #665C52; #665C52; #FF8A75; /* Lighter shade on hover */
   transform: scale(1.05);
 }
 
@@ -572,8 +572,8 @@ body::before {
 
 /* Button for Home in navigation bar */
 .navbar .home-button {
-  background-color: #4CAF50; /* Green accent for Home */
-  color: #FFFFFF;
+  background: #665C52; #665C52; #4CAF50; /* Green accent for Home */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #FFFFFF;
   padding: 10px 18px;
   border-radius: 20px;
   font-weight: bold;
@@ -582,7 +582,7 @@ body::before {
 }
 
 .navbar .home-button:hover {
-  background-color: #66BB6A; /* Slightly lighter on hover */
+  background: #665C52; #665C52; #66BB6A; /* Slightly lighter on hover */
   transform: scale(1.05);
 }
 
@@ -605,8 +605,8 @@ body::before {
 
 /* Cream background */
 body {
-  background-color: #FAF3E0; /* Soft cream background */
-  color: #333333; /* Dark text color for readability */
+  background: #665C52; #665C52; #FAF3E0; /* Soft cream background */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #333333; /* Dark text color for readability */
 }
 
 /* Position logo within header title box */
@@ -627,16 +627,16 @@ header .logo {
 /* Full-width footer */
 footer {
   width: 100%;
-  background-color: #333333; /* Dark background for contrast */
-  color: #FFFFFF; /* White text for readability */
+  background: #665C52; #665C52; #333333; /* Dark background for contrast */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #FFFFFF; /* White text for readability */
   padding: 10px;
   text-align: center;
 }
 
 /* White background */
 body {
-  background-color: #FFFFFF; /* Pure white background */
-  color: #333333; /* Dark text color for readability */
+  background: #665C52; #665C52; #FFFFFF; /* Pure white background */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #333333; /* Dark text color for readability */
 }
 
 /* Further adjusted position for the logo in the header title box */
@@ -651,20 +651,20 @@ header .logo {
 
 /* Background and text */
 body {
-  background-color: #E6E1CF; /* Cream background */
-  color: #333333; /* Dark text color for readability */
+  background: #665C52; #665C52; #E6E1CF; /* Cream background */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #333333; /* Dark text color for readability */
 }
 
 /* Header and footer colors */
 header, footer {
-  background-color: #665C52; /* Dark brown for header and footer */
-  color: #FFFFFF; /* White text for contrast */
+  background: #665C52; #665C52; #665C52; /* Dark brown for header and footer */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #FFFFFF; /* White text for contrast */
 }
 
 /* Buttons and links in accent colors */
 button, .btn, .home-button {
-  background-color: #CC5B14; /* Accent orange for buttons */
-  color: #FFFFFF; /* White text for readability */
+  background: #665C52; #665C52; #CC5B14; /* Accent orange for buttons */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #FFFFFF; /* White text for readability */
   border-radius: 20px;
   padding: 8px 15px;
   font-weight: bold;
@@ -672,25 +672,25 @@ button, .btn, .home-button {
 }
 
 button:hover, .btn:hover, .home-button:hover {
-  background-color: #E69D67; /* Lighter orange on hover */
+  background: #665C52; #665C52; #E69D67; /* Lighter orange on hover */
   transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Link color adjustments */
 a {
-  color: #74B3A7; /* Soft green for links */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #74B3A7; /* Soft green for links */
   text-decoration: none;
   font-weight: 500;
 }
 
 a:hover {
-  color: #A3CCAF; /* Lighter green on hover */
+  border-border-color: #CC5B14; #A3CCAF; #74B3A7; #74B3A7; #A3CCAF; /* Lighter green on hover */
   text-decoration: underline;
 }
 
 /* Section styling */
 .section {
-  background-color: #FFFFFF; /* White background for sections */
+  background: #665C52; #665C52; #FFFFFF; /* White background for sections */
   border-radius: 10px; /* Rounded sections */
   padding: 30px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
@@ -700,7 +700,7 @@ a:hover {
 /* Adjust footer to full width and color */
 footer {
   width: 100%;
-  background-color: #665C52; /* Footer color */
+  background: #665C52; #665C52; #665C52; /* Footer color */
   padding: 10px;
   text-align: center;
 }
@@ -723,6 +723,6 @@ header .logo {
 /* Minimalist dropdown styling */
 .navbar .dropdown-menu {
   border-radius: 10px;
-  background-color: #FFFFFF;
+  background: #665C52; #665C52; #FFFFFF;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
