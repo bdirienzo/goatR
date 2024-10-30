@@ -13,11 +13,11 @@
  *
  */
 
-body { background-color: #f9f9f9; color: #333; font-family: Arial, sans-serif; }
+html, body {
   height: 100%;
 }
 
-body { background-color: #f9f9f9; color: #333; font-family: Arial, sans-serif; }
+body {
   position: relative;
 }
 
@@ -363,7 +363,7 @@ mark {
    Added in pandoc 2.11: https://github.com/jgm/pandoc-templates/commit/9904bf71
 */
 
-body { background-color: #f9f9f9; color: #333; font-family: Arial, sans-serif; }
+div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
