@@ -431,3 +431,67 @@ h1, h2, h3, h4, h5, h6 {
 a:visited {
   color: #6200EE; /* Different shade for visited links */
 }
+
+/* Minimalist and aesthetic theme adjustments */
+
+/* Base styling for body and containers */
+body {
+  background-color: #F3F4F6; /* Light grey background for minimalism */
+  color: #333333; /* Dark grey for text */
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Clean, modern font */
+}
+
+header, footer, .navbar, .toc {
+  background-color: #FFFFFF; /* White background for header, footer, and navigation */
+  border-bottom: 1px solid #E5E7EB; /* Soft border */
+}
+
+/* Rounded buttons with shadow */
+button, .btn {
+  background-color: #4F46E5; /* Soft blue for primary buttons */
+  color: #FFFFFF;
+  border: none;
+  border-radius: 25px; /* Rounded edges for modern look */
+  padding: 10px 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+button:hover, .btn:hover {
+  background-color: #6366F1; /* Lighter blue on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Link styling */
+a {
+  color: #4F46E5; /* Soft blue for links */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #6D28D9; /* Darker accent on hover */
+  text-decoration: underline;
+}
+
+/* Headings for clean, spacious design */
+h1, h2, h3, h4, h5, h6 {
+  color: #111827; /* Dark grey for headings */
+  margin-bottom: 15px;
+}
+
+.container, .content, .section {
+  padding: 20px;
+  max-width: 1200px; /* Limit width for readability */
+  margin: 0 auto; /* Centered alignment */
+}
+
+/* Section styling for distinct, clean sections */
+.section {
+  background-color: #FFFFFF;
+  border-radius: 10px; /* Rounded sections */
+  padding: 30px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  margin-bottom: 30px;
+}
