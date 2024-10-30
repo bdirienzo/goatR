@@ -1,12 +1,12 @@
 /* Fondo */
 body {
-  background-color: #F7F7F7; /* Crema para el fondo */
+  background-color: white; /* Crema para el fondo */
   color: #333333; /* Gris oscuro para el texto */
 }
 
 /* Enlaces */
 a {
-  color: #A0C1D1; /* Celeste pastel */
+  color: #7cdaf9; /* Celeste pastel */
   text-decoration: none;
 }
 
@@ -39,10 +39,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer */
 footer {
-  background-color: #C4E7D4; /* Verde pastel */
+  background-color: #white; /* Verde pastel */
   color: #333333;
   padding: 20px;
-  border-top: 1px solid #D3D3D3;
+  border-top: 1px solid #white;
 }
 
 /* Dropdown menus */
