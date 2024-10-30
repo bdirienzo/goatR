@@ -632,3 +632,17 @@ footer {
   padding: 10px;
   text-align: center;
 }
+
+/* White background */
+body {
+  background-color: #FFFFFF; /* Pure white background */
+  color: #333333; /* Dark text color for readability */
+}
+
+/* Further adjusted position for the logo in the header title box */
+header .logo {
+  position: relative;
+  top: -20px; /* Further adjustment upwards */
+}
+
+/* Full-width footer and fixed logo styling remain as is */
