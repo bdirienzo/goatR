@@ -5,7 +5,7 @@ Authors@R: c(
   person(given = "Bernardo", family = "Di Rienzo", email = "bdirienzo@mail.austral.edu.ar", role = c("aut", "cre")),
   person(given = "Lautaro", family = "Sanfilippo", email = "lsanfilippo@mail.austral.edu.ar", role = ("aut")))
 Description: Comprehensive toolkit for working with meteorological data from Argentine weather stations.
-License: MIT + file LICENSE
+License:
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
