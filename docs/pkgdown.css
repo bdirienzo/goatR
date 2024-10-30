@@ -382,3 +382,52 @@ div.csl-right-inline {
 div.csl-indent {
   margin-left: 2em;
 }
+
+/* Dark theme adjustments */
+
+body {
+  background-color: #121212; /* Dark background for body */
+  color: #E0E0E0; /* Light text color */
+}
+
+a {
+  color: #BB86FC; /* Light purple for links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3700B3; /* Darker purple on hover */
+  text-decoration: underline;
+}
+
+header, footer, .navbar, .toc {
+  background-color: #1F1F1F; /* Dark background for header, footer, and navigation */
+  border-color: #333333; /* Border color */
+}
+
+button, .btn {
+  background-color: #3700B3; /* Dark purple button background */
+  color: #E0E0E0; /* Light text color for buttons */
+  border: none;
+}
+
+button:hover, .btn:hover {
+  background-color: #BB86FC; /* Lighter purple on hover */
+  color: #121212; /* Dark text on hover */
+}
+
+/* Typography adjustments */
+h1, h2, h3, h4, h5, h6 {
+  color: #BB86FC; /* Accent color for headers */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Container and section spacing for a clean, modern layout */
+.container, .content, .section {
+  padding: 20px;
+}
+
+/* Additional link styling for clarity */
+a:visited {
+  color: #6200EE; /* Different shade for visited links */
+}
