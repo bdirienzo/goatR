@@ -602,3 +602,33 @@ body::before {
     transform: translateY(0px);
   }
 }
+
+/* Cream background */
+body {
+  background-color: #FAF3E0; /* Soft cream background */
+  color: #333333; /* Dark text color for readability */
+}
+
+/* Position logo within header title box */
+header .logo {
+  position: relative;
+  top: -10px; /* Adjust the logo upwards */
+}
+
+/* Fixed logo in the top right on every page */
+.fixed-logo {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px; /* Adjust size as needed */
+  z-index: 10;
+}
+
+/* Full-width footer */
+footer {
+  width: 100%;
+  background-color: #333333; /* Dark background for contrast */
+  color: #FFFFFF; /* White text for readability */
+  padding: 10px;
+  text-align: center;
+}
