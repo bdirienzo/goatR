@@ -18,6 +18,9 @@ Imports:
     dplyr,
     ggplot2,
     utils,
+    mockery, 
+    testthat,
+    withr
 Suggests: 
     knitr,
     rmarkdown
