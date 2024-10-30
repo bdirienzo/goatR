@@ -7,11 +7,7 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![Build
-Status](https://github.com/bdirienzo/goatR/actions)](https://github.com/bdirienzo/goatR/actions/workflows/R-CMD-check.yaml/badge.svg)
 [![R-CMD-check](https://github.com/bdirienzo/goatR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/bdirienzo/goatR/actions/workflows/R-CMD-check.yaml)
-[![CRAN
-Downloads](https://cran.r-project.org/package=goatR)](https://cranlogs.r-pkg.org/badges/grand-total/goatR)
 [![Codecov test
 coverage](https://codecov.io/gh/bdirienzo/goatR/graph/badge.svg)](https://app.codecov.io/gh/bdirienzo/goatR)
 [![Netlify
