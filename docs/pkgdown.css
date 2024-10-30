@@ -1,12 +1,12 @@
 /* Fondo */
 body {
-  background-color: #FFF8E7; /* Crema para el fondo */
+  background-color: #F7F7F7; /* Crema para el fondo */
   color: #333333; /* Gris oscuro para el texto */
 }
 
 /* Enlaces */
 a {
-  color: #A0D6E8; /* Celeste pastel */
+  color: #A0C1D1; /* Celeste pastel */
   text-decoration: none;
 }
 
@@ -17,7 +17,7 @@ a:hover {
 
 /* Botones */
 button, .btn {
-  background-color: #FFCCB6; /* Naranja pastel */
+  background-color: #A0C1D1; /* Naranja pastel */
   color: #333333;
   border: none;
   border-radius: 25px;
@@ -27,13 +27,13 @@ button, .btn {
 }
 
 button:hover, .btn:hover {
-  background-color: #FFAB91; /* Naranja más oscuro */
+  background-color: #8AA9B4; /* Naranja más oscuro */
   transform: translateY(-2px);
 }
 
 /* Encabezados */
 h1, h2, h3, h4, h5, h6 {
-  color: #A0D6E8; /* Celeste pastel */
+  color: #A0C1D1; /* Celeste pastel */
   margin-bottom: 15px;
 }
 
@@ -47,7 +47,7 @@ footer {
 
 /* Dropdown menus */
 .navbar .dropdown-menu {
-  background-color: #FFF8E7; /* Fondo crema */
+  background-color: #F7F7F7; /* Fondo crema */
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -63,7 +63,7 @@ footer {
 
 /* Sidebar */
 #pkgdown-sidebar {
-  background-color: #FFF8E7; /* Fondo crema */
+  background-color: #F7F7F7; /* Fondo crema */
   color: #333333;
   border-radius: 10px;
   padding: 20px;
@@ -72,7 +72,7 @@ footer {
 
 /* Botón de inicio */
 .navbar .home-button {
-  background-color: #A0D6E8; /* Celeste pastel */
+  background-color: #A0C1D1; /* Celeste pastel */
   color: #333333;
   padding: 10px 18px;
   border-radius: 20px;
@@ -87,7 +87,7 @@ footer {
 
 /* Fondos de secciones */
 .section {
-  background-color: #FFF8E7; /* Fondo crema */
+  background-color: #F7F7F7; /* Fondo crema */
   color: #333333;
   border-radius: 10px;
   padding: 30px;
@@ -99,6 +99,6 @@ footer {
 table {
   display: block;
   overflow: auto;
-  background-color: #FFF8E7; /* Fondo crema */
+  background-color: #F7F7F7; /* Fondo crema */
   border: 1px solid #E0E0E0;
 }
