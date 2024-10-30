@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goatR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
       </span>
     </div>
 
@@ -67,76 +67,109 @@
     <h2>Format</h2>
     <p>A data frame with the following columns:</p>
 <dl><dt>id</dt>
-<dd><p>Character. Identifier for the weather station (e.g., <code>NH0472</code>).</p></dd>
+<dd><p>Character. Identifier for the weather station (e.g., "NH0472").</p></dd>
 
 <dt>fecha</dt>
-<dd><p>Date. Observation date in YYYY-MM-DD format (e.g., <code>1961-07-01</code>).</p></dd>
+<dd><p>Date. Observation date in YYYY-MM-DD format (e.g., "1961-07-01").</p></dd>
 
 <dt>temperatura_abrigo_150cm</dt>
-<dd><p>Numeric. Temperature at 150 cm under shelter, in degrees Celsius (e.g., <code>11.1</code>).</p></dd>
+<dd><p>Numeric. Temperature at 150 cm under shelter, in degrees Celsius (e.g., "11.1").</p></dd>
 
 <dt>temperatura_abrigo_150cm_maxima</dt>
-<dd><p>Numeric. Maximum daily temperature at 150 cm under shelter, in degrees Celsius (e.g., <code>13.4</code>).</p></dd>
+<dd><p>Numeric. Maximum daily temperature at 150 cm under shelter, in degrees Celsius (e.g., "13.4").</p></dd>
 
 <dt>temperatura_abrigo_150cm_minima</dt>
-<dd><p>Numeric. Minimum daily temperature at 150 cm under shelter, in degrees Celsius (e.g., <code>8.8</code>).</p></dd>
+<dd><p>Numeric. Minimum daily temperature at 150 cm under shelter, in degrees Celsius (e.g., "8.8").</p></dd>
 
 <dt>temperatura_intemperie_5cm_minima</dt>
-<dd><p>Numeric. Minimum daily temperature at 5 cm in open air, in degrees Celsius (e.g., <code>6.2</code>).</p></dd>
+<dd><p>Numeric. Minimum daily temperature at 5 cm in open air, in degrees Celsius (e.g., "6.2").</p></dd>
 
 <dt>temperatura_intemperie_50cm_minima</dt>
-<dd><p>Numeric. Minimum daily temperature at 50 cm in open air, in degrees Celsius (e.g., <code>4.5</code>).</p></dd>
+<dd><p>Numeric. Minimum daily temperature at 50 cm in open air, in degrees Celsius (e.g., "4.5").</p></dd>
 
 <dt>temperatura_suelo_5cm_media</dt>
-<dd><p>Numeric. Average daily soil temperature at 5 cm depth, in degrees Celsius (e.g., <code>10.0</code>).</p></dd>
+<dd><p>Numeric. Average daily soil temperature at 5 cm depth, in degrees Celsius (e.g., "10.0").</p></dd>
 
 <dt>temperatura_suelo_10cm_media</dt>
-<dd><p>Numeric. Average daily soil temperature at 10 cm depth, in degrees Celsius (e.g., <code>9.8</code>).</p></dd>
+<dd><p>Numeric. Average daily soil temperature at 10 cm depth, in degrees Celsius (e.g., "9.8").</p></dd>
 
 <dt>temperatura_inte_5cm</dt>
-<dd><p>Numeric. Temperature at 5 cm under cover, in degrees Celsius (e.g., <code>7.3</code>).</p></dd>
+<dd><p>Numeric. Temperature at 5 cm under cover, in degrees Celsius (e.g., "7.3").</p></dd>
 
-<dt>temperatura_inte_50cm</dt>
-<dd><p>Numeric. Temperature at 50 cm under cover, in degrees Celsius (e.g., <code>6.1</code>).</p></dd>
+<dt>temperatura_intemperie_150cm_minima</dt>
+<dd><p>Numeric. Minimum daily temperature at 150 cm in open air, in degrees Celsius.</p></dd>
+
+<dt>humedad_suelo</dt>
+<dd><p>Numeric. Soil humidity percentage.</p></dd>
+
+<dt>precipitacion_pluviometrica</dt>
+<dd><p>Numeric. Daily rainfall in mm.</p></dd>
+
+<dt>granizo</dt>
+<dd><p>Logical. Indicator of hail occurrence (TRUE/FALSE).</p></dd>
+
+<dt>nieve</dt>
+<dd><p>Logical. Indicator of snow occurrence (TRUE/FALSE).</p></dd>
+
+<dt>heliofania_efectiva</dt>
+<dd><p>Numeric. Effective sunshine duration in hours.</p></dd>
+
+<dt>heliofania_relativa</dt>
+<dd><p>Numeric. Relative sunshine duration as a percentage.</p></dd>
+
+<dt>tesion_vapor_media</dt>
+<dd><p>Numeric. Average daily vapor tension in hPa.</p></dd>
 
 <dt>humedad_media</dt>
-<dd><p>Numeric. Average daily humidity percentage (e.g., <code>75.3</code>).</p></dd>
+<dd><p>Numeric. Average daily humidity percentage (e.g., "75.3").</p></dd>
 
-<dt>humedad_maxima</dt>
-<dd><p>Numeric. Maximum daily humidity percentage (e.g., <code>95.0</code>).</p></dd>
+<dt>humedad_media_8_14_20</dt>
+<dd><p>Numeric. Average humidity at 8 AM, 2 PM, and 8 PM.</p></dd>
 
-<dt>humedad_minima</dt>
-<dd><p>Numeric. Minimum daily humidity percentage (e.g., <code>60.5</code>).</p></dd>
+<dt>rocio_medio</dt>
+<dd><p>Numeric. Average daily dew point temperature in degrees Celsius.</p></dd>
 
-<dt>presion_media</dt>
-<dd><p>Numeric. Average daily atmospheric pressure, in hPa (e.g., <code>1015.6</code>).</p></dd>
+<dt>duracion_follaje_mojado</dt>
+<dd><p>Numeric. Duration of wet foliage in hours.</p></dd>
+
+<dt>velocidad_viento_200cm_media</dt>
+<dd><p>Numeric. Average wind speed at 2 m height in m/s.</p></dd>
+
+<dt>direccion_viento_200cm</dt>
+<dd><p>Numeric. Wind direction at 2 m height in degrees from north.</p></dd>
+
+<dt>velocidad_viento_1000cm_media</dt>
+<dd><p>Numeric. Average wind speed at 10 m height in m/s.</p></dd>
 
 <dt>direccion_viento_1000cm</dt>
-<dd><p>Numeric. Wind direction at 10 m height, in degrees from north (e.g., <code>270</code>).</p></dd>
+<dd><p>Numeric. Wind direction at 10 m height in degrees from north.</p></dd>
 
 <dt>velocidad_viento_maxima</dt>
-<dd><p>Numeric. Maximum daily wind speed, in m/s (e.g., <code>8.5</code>).</p></dd>
+<dd><p>Numeric. Maximum daily wind speed, in m/s (e.g., "8.5").</p></dd>
+
+<dt>presion_media</dt>
+<dd><p>Numeric. Average daily atmospheric pressure, in hPa (e.g., "1015.6").</p></dd>
 
 <dt>radiacion_global</dt>
-<dd><p>Numeric. Global radiation in kJ/m² (e.g., <code>520.3</code>).</p></dd>
+<dd><p>Numeric. Global radiation in kJ/m² (e.g., "520.3").</p></dd>
 
 <dt>radiacion_neta</dt>
-<dd><p>Numeric. Net radiation in kJ/m² (e.g., <code>300.4</code>).</p></dd>
+<dd><p>Numeric. Net radiation in kJ/m² (e.g., "300.4").</p></dd>
 
 <dt>evaporacion_tanque</dt>
-<dd><p>Numeric. Daily tank evaporation in mm (e.g., <code>2.5</code>).</p></dd>
+<dd><p>Numeric. Daily tank evaporation in mm (e.g., "2.5").</p></dd>
 
 <dt>evapotranspiracion_potencial</dt>
-<dd><p>Numeric. Potential evapotranspiration in mm (e.g., <code>4.0</code>).</p></dd>
+<dd><p>Numeric. Potential evapotranspiration in mm (e.g., "4.0").</p></dd>
 
 <dt>profundidad_napa</dt>
-<dd><p>Numeric. Depth of the water table in meters (e.g., <code>1.8</code>).</p></dd>
+<dd><p>Numeric. Depth of the water table in meters (e.g., "1.8").</p></dd>
 
 <dt>horas_frio</dt>
-<dd><p>Numeric. Total daily cold hours (e.g., <code>15.6</code>).</p></dd>
+<dd><p>Numeric. Total daily cold hours (e.g., "15.6").</p></dd>
 
 <dt>unidad_frio</dt>
-<dd><p>Numeric. Unit for cold hours, if applicable (e.g., <code>-</code>).</p></dd>
+<dd><p>Numeric. Unit for cold hours, if applicable (e.g., "-").</p></dd>
 
 
 </dl></div>
@@ -149,83 +182,97 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">station_sample</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">station_sample</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       id      fecha temperatura_abrigo_150cm temperatura_abrigo_150cm_maxima</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 NH0472 1961-07-01                     11.1                            13.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 NH0472 1961-07-02                      5.5                            10.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 NH0472 1961-07-03                      6.0                            10.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 NH0472 1961-07-04                       NA                              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 NH0472 1961-07-05                     12.4                            14.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 NH0472 1961-07-06                     11.0                            16.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   temperatura_abrigo_150cm_minima temperatura_intemperie_5cm_minima</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                             8.8                                NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                             0.5                                NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                             1.2                                NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                             7.0                                NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                            10.0                                NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                             5.5                                NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   temperatura_intemperie_50cm_minima temperatura_suelo_5cm_media</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                 NA                          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                 NA                          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                 NA                          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                 NA                          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                 NA                          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                 NA                          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   temperatura_suelo_10cm_media temperatura_inte_5cm</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                           NA                   NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                           NA                   NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                           NA                   NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                           NA                   NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                           NA                   NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                           NA                   NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   temperatura_intemperie_150cm_minima humedad_suelo precipitacion_pluviometrica</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                  NA            NA                           0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                  NA            NA                           0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                  NA            NA                           0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                  NA            NA                           0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                  NA            NA                           0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                  NA            NA                           0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   granizo nieve heliofania_efectiva heliofania_relativa tesion_vapor_media</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1       0     0                  NA                  NA                9.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2       0     0                  NA                  NA                7.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3       0     0                  NA                  NA                7.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4       0     0                  NA                  NA               14.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5       0     0                  NA                  NA               17.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6       0     0                  NA                  NA               11.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   humedad_media humedad_media_8_14_20 rocio_medio duracion_follaje_mojado</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1            NA                    81         6.7                      NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2            NA                    80         3.6                      NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3            NA                    62         2.9                      NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4            NA                    93        12.9                      NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5            NA                    92        15.1                      NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6            NA                    80         9.0                      NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   velocidad_viento_200cm_media direccion_viento_200cm</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                         14.4                     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                          4.8                     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                          7.2                     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                          8.8                     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                          4.8                     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                         14.4                     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   velocidad_viento_1000cm_media direccion_viento_1000cm velocidad_viento_maxima</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                            18                      NA                      NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                             6                      NA                      NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                             9                      NA                      NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                            11                      NA                      NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                             6                      NA                      NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                            18                      NA                      NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   presion_media radiacion_global radiacion_neta evaporacion_tanque</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1            NA               NA             NA                 NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2            NA               NA             NA                 NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3            NA               NA             NA                 NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4            NA               NA             NA                 NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5            NA               NA             NA                 NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6            NA               NA             NA                 NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   evapotranspiracion_potencial profundidad_napa horas_frio unidad_frio</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                           NA               NA   0.000000          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                           NA               NA  15.600000          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                           NA               NA  14.500000          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                           NA               NA         NA          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                           NA               NA   0.000000          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                           NA               NA   3.272727          NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                id      fecha temperatura_abrigo_150cm</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-01 NH0472 1961-07-01                     11.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-02 NH0472 1961-07-02                      5.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-03 NH0472 1961-07-03                      6.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-04 NH0472 1961-07-04                       NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-05 NH0472 1961-07-05                     12.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-06 NH0472 1961-07-06                     11.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            temperatura_abrigo_150cm_maxima temperatura_abrigo_150cm_minima</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-01                            13.4                             8.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-02                            10.5                             0.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-03                            10.8                             1.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-04                              NA                             7.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-05                            14.8                            10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-06                            16.5                             5.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            temperatura_intemperie_5cm_minima temperatura_intemperie_50cm_minima</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-01                                NA                                 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-02                                NA                                 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-03                                NA                                 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-04                                NA                                 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-05                                NA                                 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-06                                NA                                 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            temperatura_suelo_5cm_media temperatura_suelo_10cm_media</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-01                          NA                           NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-02                          NA                           NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-03                          NA                           NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-04                          NA                           NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-05                          NA                           NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-06                          NA                           NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            temperatura_inte_5cm temperatura_intemperie_150cm_minima</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-01                   NA                                  NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-02                   NA                                  NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-03                   NA                                  NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-04                   NA                                  NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-05                   NA                                  NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-06                   NA                                  NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            humedad_suelo precipitacion_pluviometrica granizo nieve</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-01            NA                           0       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-02            NA                           0       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-03            NA                           0       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-04            NA                           0       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-05            NA                           0       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-06            NA                           0       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            heliofania_efectiva heliofania_relativa tesion_vapor_media</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-01                  NA                  NA                9.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-02                  NA                  NA                7.9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-03                  NA                  NA                7.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-04                  NA                  NA               14.9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-05                  NA                  NA               17.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-06                  NA                  NA               11.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            humedad_media humedad_media_8_14_20 rocio_medio</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-01            NA                    81         6.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-02            NA                    80         3.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-03            NA                    62         2.9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-04            NA                    93        12.9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-05            NA                    92        15.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-06            NA                    80         9.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            duracion_follaje_mojado velocidad_viento_200cm_media</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-01                      NA                         14.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-02                      NA                          4.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-03                      NA                          7.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-04                      NA                          8.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-05                      NA                          4.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-06                      NA                         14.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            direccion_viento_200cm velocidad_viento_1000cm_media</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-01                     NA                            18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-02                     NA                             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-03                     NA                             9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-04                     NA                            11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-05                     NA                             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-06                     NA                            18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            direccion_viento_1000cm velocidad_viento_maxima presion_media</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-01                      NA                      NA            NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-02                      NA                      NA            NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-03                      NA                      NA            NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-04                      NA                      NA            NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-05                      NA                      NA            NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-06                      NA                      NA            NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            radiacion_global radiacion_neta evaporacion_tanque</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-01               NA             NA                 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-02               NA             NA                 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-03               NA             NA                 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-04               NA             NA                 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-05               NA             NA                 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-06               NA             NA                 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            evapotranspiracion_potencial profundidad_napa horas_frio unidad_frio</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-01                           NA               NA   0.000000          NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-02                           NA               NA  15.600000          NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-03                           NA               NA  14.500000          NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-04                           NA               NA         NA          NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-05                           NA               NA   0.000000          NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1961-07-06                           NA               NA   3.272727          NA</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Example: Plotting temperature trends over time</span></span></span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"ggplot2"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>

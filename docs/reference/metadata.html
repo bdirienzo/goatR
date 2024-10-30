@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goatR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
       </span>
     </div>
 
@@ -67,37 +67,37 @@
     <h2>Format</h2>
     <p>A data frame with the following columns:</p>
 <dl><dt>id</dt>
-<dd><p>Character. Unique identifier for each monitoring station (e.g., <code>A872999</code>).</p></dd>
+<dd><p>Character. Unique identifier for each monitoring station (e.g., "A872999").</p></dd>
 
 <dt>nombre</dt>
-<dd><p>Character. Name of the station, often indicating its function or affiliation (e.g., <code>Instituto de Clima y Agua</code>).</p></dd>
+<dd><p>Character. Name of the station, often indicating its function or affiliation (e.g., "Instituto de Clima y Agua").</p></dd>
 
 <dt>tipo</dt>
-<dd><p>Character. The type of weather monitoring equipment (e.g., <code>Nimbus THP</code>).</p></dd>
+<dd><p>Character. The type of weather monitoring equipment (e.g., "Nimbus THP").</p></dd>
 
 <dt>localidad</dt>
-<dd><p>Character. The locality or town where the station is located (e.g., <code>Hurlingham</code>).</p></dd>
+<dd><p>Character. The locality or town where the station is located (e.g., "Hurlingham").</p></dd>
 
 <dt>provincia</dt>
-<dd><p>Character. Province in which the station is located (e.g., <code>Buenos Aires</code>, <code>La Pampa</code>).</p></dd>
+<dd><p>Character. Province in which the station is located (e.g., "Buenos Aires", "La Pampa").</p></dd>
 
 <dt>lat</dt>
-<dd><p>Numeric. Latitude of the station in decimal degrees (e.g., <code>-36.54</code>).</p></dd>
+<dd><p>Numeric. Latitude of the station in decimal degrees (e.g., "-36.54").</p></dd>
 
 <dt>lon</dt>
-<dd><p>Numeric. Longitude of the station in decimal degrees (e.g., <code>-63.99</code>).</p></dd>
+<dd><p>Numeric. Longitude of the station in decimal degrees (e.g., "-63.99").</p></dd>
 
 <dt>altura</dt>
-<dd><p>Numeric. Altitude of the station above sea level, in meters (e.g., <code>165.0</code>).</p></dd>
+<dd><p>Numeric. Altitude of the station above sea level, in meters (e.g., "165.0").</p></dd>
 
 <dt>ubicacion</dt>
-<dd><p>Character. Additional descriptive information on the location, often including addresses or notable landmarks (e.g., <code>Jardin Botanico Ragonese INTA</code>).</p></dd>
+<dd><p>Character. Additional descriptive information on the location, often including addresses or notable landmarks (e.g., "Jardin Botanico Ragonese INTA").</p></dd>
 
 <dt>desde</dt>
-<dd><p>POSIXct. Date when the station started operations, formatted in ISO 8601 (e.g., <code>2000-01-04T00:00:00Z[UTC]</code>).</p></dd>
+<dd><p>POSIXct. Date when the station started operations, formatted in ISO 8601 (e.g., "2000-01-04T00:00:00Z").</p></dd>
 
 <dt>hasta</dt>
-<dd><p>POSIXct. Date when the station ended operations (if applicable), formatted in ISO 8601 (e.g., <code>2024-05-23T00:00:00Z[UTC]</code>).</p></dd>
+<dd><p>POSIXct. Date when the station ended operations (if applicable), formatted in ISO 8601 (e.g., "2024-05-23T00:00:00Z").</p></dd>
 
 
 </dl></div>
@@ -110,27 +110,34 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        id                       nombre       tipo          localidad</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 A872999    Instituto de Clima y Agua Nimbus THP         Hurlingham</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 A872834         Lima - EEA San Pedro Nimbus THP               Lima</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 A872823           Anguil -EEA Anguil Nimbus THP             Anguil</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 A872822  Huinca Renanco - EEA Anguil Nimbus THP     Huinca Renanco</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 A872821 Gral San Martin - EEA Anguil Nimbus THP General San Martin</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 A872819       Miramar - EEA Balcarce Nimbus THP            Miramar</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      provincia    lat    lon altura                                ubicacion</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Buenos Aires -90.00   0.00   22.0            Jardin Botanico Ragonese INTA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 Buenos Aires -34.08 -59.21   28.0                   Ruta 9 - Km 100 - Lima</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     La Pampa -36.54 -63.99  165.0     Ruta Nacional Nº 5 Km. 580. CP: 6326</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4      Córdoba -34.77 -64.37  189.0           Ruta Nac. Nº35 Km.535 CP: 6270</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     La Pampa -38.00 -63.52  177.9         Ruta Nac. Nº35 Km. 110. CP: 8206</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 Buenos Aires -38.15 -57.99   12.0 Ruta Nº 77, km.20. CP:7607 Gral Alvarado</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                       desde                     hasta</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2000-01-04T00:00:00Z[UTC] 2024-05-23T00:00:00Z[UTC]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2010-08-25T00:00:00Z[UTC] 2024-03-23T00:00:00Z[UTC]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2010-09-13T00:00:00Z[UTC] 2024-06-18T00:00:00Z[UTC]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2010-09-06T00:00:00Z[UTC] 2022-11-02T00:00:00Z[UTC]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2010-09-10T00:00:00Z[UTC] 2022-06-15T00:00:00Z[UTC]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 2010-11-11T00:00:00Z[UTC] 2024-02-01T00:00:00Z[UTC]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              id                       nombre       tipo          localidad</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872999 A872999    Instituto de Clima y Agua Nimbus THP         Hurlingham</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872834 A872834         Lima - EEA San Pedro Nimbus THP               Lima</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872823 A872823           Anguil -EEA Anguil Nimbus THP             Anguil</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872822 A872822  Huinca Renanco - EEA Anguil Nimbus THP     Huinca Renanco</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872821 A872821 Gral San Martin - EEA Anguil Nimbus THP General San Martin</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872819 A872819       Miramar - EEA Balcarce Nimbus THP            Miramar</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            provincia    lat    lon altura</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872999 Buenos Aires -90.00   0.00   22.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872834 Buenos Aires -34.08 -59.21   28.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872823     La Pampa -36.54 -63.99  165.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872822      Córdoba -34.77 -64.37  189.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872821     La Pampa -38.00 -63.52  177.9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872819 Buenos Aires -38.15 -57.99   12.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                        ubicacion                     desde</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872999            Jardin Botanico Ragonese INTA 2000-01-04T00:00:00Z[UTC]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872834                   Ruta 9 - Km 100 - Lima 2010-08-25T00:00:00Z[UTC]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872823     Ruta Nacional Nº 5 Km. 580. CP: 6326 2010-09-13T00:00:00Z[UTC]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872822           Ruta Nac. Nº35 Km.535 CP: 6270 2010-09-06T00:00:00Z[UTC]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872821         Ruta Nac. Nº35 Km. 110. CP: 8206 2010-09-10T00:00:00Z[UTC]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872819 Ruta Nº 77, km.20. CP:7607 Gral Alvarado 2010-11-11T00:00:00Z[UTC]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                             hasta</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872999 2024-05-23T00:00:00Z[UTC]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872834 2024-03-23T00:00:00Z[UTC]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872823 2024-06-18T00:00:00Z[UTC]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872822 2022-11-02T00:00:00Z[UTC]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872821 2022-06-15T00:00:00Z[UTC]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A872819 2024-02-01T00:00:00Z[UTC]</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Example: Plotting the stations on a map using latitude and longitude</span></span></span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"ggplot2"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
@@ -140,6 +147,8 @@
 <span class="r-in"><span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Locations of Weather Monitoring Stations"</span>,</span></span>
 <span class="r-in"><span>         x <span class="op">=</span> <span class="st">"Longitude"</span>, y <span class="op">=</span> <span class="st">"Latitude"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Want to understand how all the pieces fit together? Read R for Data</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Science: https://r4ds.hadley.nz/</span>
 <span class="r-plt img"><img src="metadata-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
