@@ -6,12 +6,12 @@ body {
 
 /* Enlaces */
 a {
-  color: #7cdaf9; /* Celeste pastel */
+  color: darkgray; /* Celeste pastel */
   text-decoration: none;
 }
 
 a:hover {
-  color: #6CB3D1; /* Un poco más oscuro en hover */
+  color: #black; /* Un poco más oscuro en hover */
   text-decoration: underline;
 }
 
