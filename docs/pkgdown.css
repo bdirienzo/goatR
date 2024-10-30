@@ -646,3 +646,83 @@ header .logo {
 }
 
 /* Full-width footer and fixed logo styling remain as is */
+
+/* Updated color palette based on the provided scheme */
+
+/* Background and text */
+body {
+  background-color: #E6E1CF; /* Cream background */
+  color: #333333; /* Dark text color for readability */
+}
+
+/* Header and footer colors */
+header, footer {
+  background-color: #665C52; /* Dark brown for header and footer */
+  color: #FFFFFF; /* White text for contrast */
+}
+
+/* Buttons and links in accent colors */
+button, .btn, .home-button {
+  background-color: #CC5B14; /* Accent orange for buttons */
+  color: #FFFFFF; /* White text for readability */
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover, .btn:hover, .home-button:hover {
+  background-color: #E69D67; /* Lighter orange on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Link color adjustments */
+a {
+  color: #74B3A7; /* Soft green for links */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #A3CCAF; /* Lighter green on hover */
+  text-decoration: underline;
+}
+
+/* Section styling */
+.section {
+  background-color: #FFFFFF; /* White background for sections */
+  border-radius: 10px; /* Rounded sections */
+  padding: 30px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  margin-bottom: 30px;
+}
+
+/* Adjust footer to full width and color */
+footer {
+  width: 100%;
+  background-color: #665C52; /* Footer color */
+  padding: 10px;
+  text-align: center;
+}
+
+/* Header logo adjustment for alignment */
+header .logo {
+  position: relative;
+  top: -20px; /* Higher positioning */
+}
+
+/* Fixed logo at the top right */
+.fixed-logo {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px; /* Adjust size as needed */
+  z-index: 10;
+}
+
+/* Minimalist dropdown styling */
+.navbar .dropdown-menu {
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
