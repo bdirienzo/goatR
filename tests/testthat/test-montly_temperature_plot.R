@@ -174,24 +174,20 @@ test_that("monthly_temperature_plot errors if colors vector is invalid", {
 })
 
 test_that("fecha column is correctly converted to Date or raises an error if conversion fails", {
-  # Caso 1: Conversión exitosa de fecha
   data_valid <- data.frame(
     fecha = c("2023-01-15", "2023-02-15"),
     id = c("station1", "station1"),
     temperatura_abrigo_150cm = c(15.5, 17.3)
   )
 
-  # Comprobamos que la función se ejecute sin error con fechas válidas
   expect_silent(monthly_temperature_plot(data_valid))
 
-  # Caso 2: Conversión fallida de fecha
   data_invalid <- data.frame(
     fecha = c("2023-01-15", "invalid_date"),
     id = c("station1", "station1"),
     temperatura_abrigo_150cm = c(15.5, 17.3)
   )
 
-  # Comprobamos que se genere un error si la conversión falla
   expect_error(
     monthly_temperature_plot(data_invalid),
     "Could not convert all entries in 'fecha' to Date type. Please check the date format."
