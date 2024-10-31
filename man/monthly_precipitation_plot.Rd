@@ -2,7 +2,7 @@
 % Please edit documentation in R/monthly_precipitation_plot.R
 \name{monthly_precipitation_plot}
 \alias{monthly_precipitation_plot}
-\title{#' Monthly Precipitation Plot}
+\title{Monthly Precipitation Plot}
 \usage{
 monthly_precipitation_plot(
   ...,

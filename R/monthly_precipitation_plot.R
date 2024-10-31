@@ -1,4 +1,4 @@
-#' #' Monthly Precipitation Plot
+#' Monthly Precipitation Plot
 #'
 #' Generates a bar plot illustrating the total monthly precipitation across multiple weather stations.
 #'
