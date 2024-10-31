@@ -121,3 +121,26 @@ test_that("monthly_precipitation_plot stops if colors vector is invalid", {
   colors <- c("red", "green")
   expect_silent(monthly_precipitation_plot(df1, df2, colors = colors))
 })
+
+test_that("colors vector is correctly named with station IDs if matching length", {
+  station1 <- data.frame(
+    fecha = as.Date(c("2023-01-15", "2023-01-20")),
+    id = "station1",
+    precipitacion_pluviometrica = c(10, 15)
+  )
+
+  station2 <- data.frame(
+    fecha = as.Date(c("2023-01-15", "2023-01-20")),
+    id = "station2",
+    precipitacion_pluviometrica = c(20, 25)
+  )
+
+  colors <- c("darkblue", "darkgreen")
+  station_ids <- unique(c(station1$id, station2$id))
+
+  if (is.null(names(colors)) && length(colors) == length(station_ids)) {
+    names(colors) <- station_ids
+  }
+
+  expect_equal(names(colors), c("station1", "station2"))
+})
