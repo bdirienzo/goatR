@@ -17,25 +17,29 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental) 
- [![R-CMD-check](https://github.com/bdirienzo/goatR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/bdirienzo/goatR/actions/workflows/R-CMD-check.yaml) 
-[![Codecov test coverage](https://codecov.io/gh/bdirienzo/goatR/graph/badge.svg)](https://app.codecov.io/gh/bdirienzo/goatR)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/aac096d2-9071-4b1e-bff6-70804a0b94d0/deploy-status)](https://app.netlify.com/sites/goatr/deploys)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental) [![R-CMD-check](https://github.com/bdirienzo/goatR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/bdirienzo/goatR/actions/workflows/R-CMD-check.yaml) [![Codecov test coverage](https://codecov.io/gh/bdirienzo/goatR/graph/badge.svg)](https://app.codecov.io/gh/bdirienzo/goatR) [![Netlify Status](https://api.netlify.com/api/v1/badges/aac096d2-9071-4b1e-bff6-70804a0b94d0/deploy-status)](https://app.netlify.com/sites/goatr/deploys)
+
 <!-- badges: end -->
 
 # Summary
 
-The **goatR** package provides a comprehensive toolkit for working with meteorological data from Argentine weather stations. It offers functions to download, read, and analyze weather datasets, enabling users to efficiently handle meteorological information for research, analysis, and visualization purposes.
+The **goatR** package provides a comprehensive toolkit for working with meteorological data from Argentine weather stations. It includes functions to download, read, and analyze weather datasets, enabling users to efficiently handle meteorological information for research, analysis, and visualization purposes.
 
 Key features of the package include:
 
--   **Data Downloading Functions**: Easily download datasets from various Argentine weather stations using `download_datasets()`. This function allows you to specify a station ID to download data from a specific station or download all available datasets at once.
+-   **Data Downloading**: Easily download datasets from various Argentine weather stations using `download_datasets()`. Specify a station ID to download data from a specific station or download all available datasets at once.
 
--   **Data Reading Functions**: Read and import downloaded datasets into R with `read_datasets()`. This function supports reading data by station ID or from a specified file path, facilitating seamless integration of weather data into your workflow.
+-   **Data Reading**: Import downloaded datasets into R with `read_datasets()`. This function allows reading data by station ID or from a specified file path, facilitating the integration of weather data into your workflow.
 
--   **Data Analysis Tools**: While primarily focused on data retrieval, the package lays the groundwork for further data analysis and visualization. Users can leverage these datasets to perform statistical analyses, create visualizations, and develop predictive models.
+-   **Data Analysis**:
 
-The **goatR** package is designed to simplify the process of obtaining and working with meteorological data, particularly for researchers, climatologists, and data enthusiasts interested in Argentine weather patterns. By streamlining data access and providing user-friendly functions, the package helps users focus on analysis rather than data preparation.
+    -   **Monthly Precipitation Plot**: Visualize total monthly precipitation across multiple weather stations with `monthly_precipitation_plot()`. This function aggregates precipitation data and creates a grouped bar chart, allowing customization of colors and titles.
+    -   **Monthly Temperature Plot**: Generate line plots to visualize the monthly average temperature for multiple stations with `monthly_temperature_plot()`. The function organizes data by month and allows custom color settings for each station.
+    -   **Temperature Summary Table**: Summarize temperature data statistics for each station using `temperature_summary_table()`. It provides statistics such as average, maximum, minimum, standard deviation, and the total number of days with data.
+
+The **goatR** package simplifies the process of obtaining and working with meteorological data, particularly for researchers, climatologists, and data enthusiasts interested in Argentine weather patterns. By streamlining data access and providing user-friendly functions, the package enables users to focus on analysis rather than data preparation.
+
+------------------------------------------------------------------------
 
 # Installation
 
