@@ -193,3 +193,20 @@ test_that("fecha column is correctly converted to Date or raises an error if con
     "Could not convert all entries in 'fecha' to Date type. Please check the date format."
   )
 })
+
+test_that("dark_colors is correctly extended to match length of station_ids", {
+
+  test_data <- data.frame(
+    fecha = as.Date(c("2024-01-01", "2024-02-01", "2024-03-01", "2024-01-01", "2024-02-01")),
+    id = c("Station1", "Station2", "Station3", "Station1", "Station2"),
+    temperatura_abrigo_150cm = c(10, 15, 20, 11, 16)
+  )
+
+  result <- monthly_temperature_plot(test_data)
+
+  station_ids <- unique(test_data$id)
+  dark_colors <- colors()[grep("dark", colors())]
+
+  extended_colors <- rep(dark_colors, length.out = length(station_ids))
+  expect_equal(length(extended_colors), length(station_ids))
+})
