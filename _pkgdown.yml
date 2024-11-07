@@ -2,7 +2,7 @@ url: https://bdirienzo.github.io/goatR/
 template:
   bootstrap: 5
   light-switch: true
-  bootswatch: cyborg
+  bootswatch: morph
   theme: arrow-dark
   bslib:
     bg: "#202123"
