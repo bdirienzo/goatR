@@ -38,7 +38,7 @@ read_datasets <- function(id_station = NULL, path = NULL) {
 
   if (is.null(path)) {
     if (is.null(id_station)) {
-      stop("Either 'id_station' or 'path' must be provided.")
+      cli::cli_abort("Either 'id_station' or 'path' must be provided.")
     }
   }
 
@@ -53,8 +53,9 @@ read_datasets <- function(id_station = NULL, path = NULL) {
       assign(id_station, data, envir = parent.frame())
     }
 
+    cli::cli_alert_success("Data loaded successfully from {cli::col_green(path)}.")
     return(data)
   } else {
-    stop("The file or path doesn't exist. Please check again; you only need to enter one argument.")
+    cli::cli_abort("The file or path doesn't exist: {cli::col_red(path)}. Please check again.")
   }
 }

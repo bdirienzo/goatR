@@ -50,7 +50,7 @@ download_datasets <- function(id_station = NULL, path = NULL) {
   }
 
   if (!id_station %in% all_stations) {
-    stop("Invalid station ID. Valid options are: ", paste(all_stations, collapse = ", "))
+    cli::cli_abort("Invalid station ID. Valid options are: {cli::col_blue(paste(all_stations, collapse = ', '))}")
   }
 
   if (is.null(path)) {
@@ -58,18 +58,18 @@ download_datasets <- function(id_station = NULL, path = NULL) {
     path <- file.path("datasets-raw", paste0(id_station, ".csv"))
   } else {
     if (!dir.exists(dirname(path))) {
-      stop("The specified directory does not exist.")
+      cli::cli_abort("The specified directory does not exist.")
     }
   }
 
   url <- sprintf("https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/%s.csv", id_station)
+
   tryCatch({
     download.file(url, path)
-    message("File downloaded successfully to: ", path)
+    cli::cli_alert_success("File downloaded successfully to: {path}")
     return(path)
   },
   error = function(e) {
-    stop("Download failed. Please check the station ID and your internet connection. Error: ",
-         conditionMessage(e))
+    cli::cli_abort("Download failed. Please check the station ID and your internet connection. Error: {conditionMessage(e)}")
   })
 }

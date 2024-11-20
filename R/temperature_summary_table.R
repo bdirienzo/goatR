@@ -33,7 +33,7 @@ temperature_summary_table <- function(...) {
   station_data_list <- list(...)
 
   if (!all(sapply(station_data_list, is.data.frame))) {
-    stop("All inputs must be data frames.")
+    cli::cli_abort("All inputs must be data frames.")
   }
 
   combined_data <- do.call(rbind, station_data_list)
@@ -41,10 +41,10 @@ temperature_summary_table <- function(...) {
   required_columns <- c("id", "temperatura_abrigo_150cm")
   missing_columns <- setdiff(required_columns, names(combined_data))
   if (length(missing_columns) > 0) {
-    stop(paste("The following columns are missing in the data:", paste(missing_columns, collapse = ", ")))
+    cli::cli_abort("The following columns are missing in the data: {cli::col_red(paste(missing_columns, collapse = ', '))}")
   }
 
-  combined_data |>
+  result <- combined_data |>
     dplyr::group_by(id) |>
     dplyr::summarise(
       average_temperature = mean(temperatura_abrigo_150cm, na.rm = TRUE),
@@ -53,4 +53,8 @@ temperature_summary_table <- function(...) {
       standard_deviation = sd(temperatura_abrigo_150cm, na.rm = TRUE),
       total_days = dplyr::n()
     )
+
+  cli::cli_alert_success("Summary table generated successfully.")
+
+  return(result)
 }

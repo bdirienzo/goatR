@@ -28,28 +28,36 @@
 #' @export
 monthly_temperature_plot <- function(..., colors = NULL, title = "Temperature") {
   data_list <- list(...)
+
   if (!all(sapply(data_list, is.data.frame))) {
-    stop("All inputs must be data frames.")
+    cli::cli_abort("All inputs must be data frames.")
   }
+
   data <- do.call(rbind, data_list)
   required_columns <- c("fecha", "id", "temperatura_abrigo_150cm")
   missing_columns <- setdiff(required_columns, names(data))
+
   if (length(missing_columns) > 0) {
-    stop(paste("The following columns are missing in the data:", paste(missing_columns, collapse = ", ")))
+    cli::cli_abort("The following columns are missing in the data: {cli::col_red(paste(missing_columns, collapse = ', '))}")
   }
+
   if (!inherits(data$fecha, "Date")) {
     data$fecha <- as.Date(data$fecha)
     if (any(is.na(data$fecha))) {
-      stop("Could not convert all entries in 'fecha' to Date type. Please check the date format.")
+      cli::cli_abort("Could not convert all entries in 'fecha' to Date type. Please check the date format.")
     }
   }
+
   data <- data |>
     dplyr::mutate(month = factor(format(fecha, "%B"), levels = month.name))
+
   data_summary <- data |>
     dplyr::group_by(id, month) |>
     dplyr::summarise(average_temperature = mean(temperatura_abrigo_150cm, na.rm = TRUE)) |>
     dplyr::ungroup()
+
   station_ids <- unique(data_summary$id)
+
   if (is.null(colors)) {
     dark_colors <- colors()[grep("dark", colors())]
     if (length(dark_colors) < length(station_ids)) {
@@ -62,10 +70,11 @@ monthly_temperature_plot <- function(..., colors = NULL, title = "Temperature") 
       if (length(colors) == length(station_ids)) {
         names(colors) <- station_ids
       } else {
-        stop("Colors vector must be named with station IDs or match the number of stations.")
+        cli::cli_abort("Colors vector must be named with station IDs or match the number of stations.")
       }
     }
   }
+
   p <- ggplot2::ggplot(data_summary, ggplot2::aes(x = month, y = average_temperature, color = as.factor(id), group = id)) +
     ggplot2::geom_line(linewidth = 1.2) +
     ggplot2::geom_point(size = 2) +
@@ -79,5 +88,6 @@ monthly_temperature_plot <- function(..., colors = NULL, title = "Temperature") 
       axis.title = ggplot2::element_text(face = "bold"),
       axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)
     )
+
   return(p)
 }
