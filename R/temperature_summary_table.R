@@ -7,7 +7,6 @@
 #' @param ... One or more data frames representing temperature data for various stations. Each data frame should contain:
 #' - **"id"**: representing station identifiers.
 #' - **"temperatura_abrigo_150cm"**: representing temperature measurements at a height of 150 cm.
-#'
 #' @details The function combines the input data frames into a single data frame, validates that the required columns are present, and groups the data by station ID to compute the summary statistics. If any input data frame lacks the required columns "id" or "temperatura_abrigo_150cm", the function will stop with an error message.
 #'
 #' **WARNING:** This function will stop if the required columns are not found in any of the data frames provided.

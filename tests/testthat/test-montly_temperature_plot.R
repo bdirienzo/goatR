@@ -92,7 +92,7 @@ test_that("monthly_temperature_plot handles custom colors correctly", {
 
   expect_s3_class(p, "ggplot")
 
-  plot_data <- ggplot_build(p)$data[[1]]
+  plot_data <- ggplot2::ggplot_build(p)$data[[1]]
   expect_true(all(unique(plot_data$colour) %in% custom_colors))
 })
 

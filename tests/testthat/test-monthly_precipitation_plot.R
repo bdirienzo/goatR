@@ -80,7 +80,7 @@ test_that("Function handles single data frame input", {
 
   expect_equal(plot$labels$title, "Single Station Precipitation")
 
-  built_plot <- ggplot_build(plot)
+  built_plot <- ggplot2::ggplot_build(plot)
 
   layer_data <- built_plot$data[[1]]
 

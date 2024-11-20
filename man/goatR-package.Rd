@@ -11,7 +11,7 @@ Comprehensive toolkit for working with meteorological data from Argentine weathe
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/bdirienzo/goatR}
+  \item \url{https://bdirienzo.github.io/goatR}
   \item Report bugs at \url{https://github.com/bdirienzo/goatR/issues}
 }
 

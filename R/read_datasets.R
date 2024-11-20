@@ -47,7 +47,7 @@ read_datasets <- function(id_station = NULL, path = NULL) {
   }
 
   if (file.exists(path)) {
-    data <- read.csv(path)
+    data <- utils::read.csv(path)
 
     if (!is.null(id_station)) {
       assign(id_station, data, envir = parent.frame())
