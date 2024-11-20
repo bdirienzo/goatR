@@ -24,8 +24,6 @@
 #'
 #' *RECOMMENDATION:* Use this function in conjunction with other functions available at @seealso
 #'
-#' @import dplyr
-#' @import ggplot2
 #' @seealso `goatR::download_datasets` to download datasets from Argentine weather stations, and `goatR::read_datasets` to read the downloaded datasets into R.
 #' @export
 monthly_temperature_plot <- function(..., colors = NULL, title = "Temperature") {
@@ -46,11 +44,11 @@ monthly_temperature_plot <- function(..., colors = NULL, title = "Temperature") 
     }
   }
   data <- data |>
-    mutate(month = factor(format(fecha, "%B"), levels = month.name))
+    dplyr::mutate(month = factor(format(fecha, "%B"), levels = month.name))
   data_summary <- data |>
-    group_by(id, month) |>
-    summarise(average_temperature = mean(temperatura_abrigo_150cm, na.rm = TRUE)) |>
-    ungroup()
+    dplyr::group_by(id, month) |>
+    dplyr::summarise(average_temperature = mean(temperatura_abrigo_150cm, na.rm = TRUE)) |>
+    dplyr::ungroup()
   station_ids <- unique(data_summary$id)
   if (is.null(colors)) {
     dark_colors <- colors()[grep("dark", colors())]
@@ -68,18 +66,18 @@ monthly_temperature_plot <- function(..., colors = NULL, title = "Temperature") 
       }
     }
   }
-  p <- ggplot(data_summary, aes(x = month, y = average_temperature, color = as.factor(id), group = id)) +
-    geom_line(linewidth = 1.2) +
-    geom_point(size = 2) +
-    scale_color_manual(values = colors) +
-    labs(title = title, x = "Month", y = "Average Temperature (C)", color = "Station") +
-    theme_minimal(base_size = 14) +
-    theme(
-      plot.title = element_text(hjust = 0.5, face = "bold"),
+  p <- ggplot2::ggplot(data_summary, ggplot2::aes(x = month, y = average_temperature, color = as.factor(id), group = id)) +
+    ggplot2::geom_line(linewidth = 1.2) +
+    ggplot2::geom_point(size = 2) +
+    ggplot2::scale_color_manual(values = colors) +
+    ggplot2::labs(title = title, x = "Month", y = "Average Temperature (C)", color = "Station") +
+    ggplot2::theme_minimal(base_size = 14) +
+    ggplot2::theme(
+      plot.title = ggplot2::element_text(hjust = 0.5, face = "bold"),
       legend.position = "bottom",
-      legend.title = element_text(face = "bold"),
-      axis.title = element_text(face = "bold"),
-      axis.text.x = element_text(angle = 45, hjust = 1)
+      legend.title = ggplot2::element_text(face = "bold"),
+      axis.title = ggplot2::element_text(face = "bold"),
+      axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)
     )
   return(p)
 }

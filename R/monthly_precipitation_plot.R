@@ -15,9 +15,6 @@
 #'
 #' @return A \code{ggplot} object representing the total monthly precipitation for each station.
 #'
-#' @import dplyr
-#' @import ggplot2
-#'
 #' @seealso goatR::download_datasets for downloading datasets from Argentine weather stations, and goatR::read_datasets for reading the downloaded datasets into R.
 #'
 #' @examples
@@ -33,32 +30,25 @@ monthly_precipitation_plot <- function(..., colors = NULL, title = "Accumulated 
   if (!all(sapply(data_list, is.data.frame))) {
     stop("All inputs must be data frames.")
   }
-
   data <- do.call(rbind, data_list)
-
   required_columns <- c("fecha", "id", "precipitacion_pluviometrica")
   missing_columns <- setdiff(required_columns, names(data))
   if (length(missing_columns) > 0) {
     stop(paste("The following columns are missing in the data:", paste(missing_columns, collapse = ", ")))
   }
-
   if (!inherits(data$fecha, "Date")) {
     data$fecha <- as.Date(data$fecha)
     if (any(is.na(data$fecha))) {
       stop("Could not convert all entries in 'fecha' to Date type. Please check the date format.")
     }
   }
-
-  data <- data %>%
-    mutate(month = factor(format(fecha, "%B"), levels = month.name))
-
-  data_summary <- data %>%
-    group_by(id, month) %>%
-    summarise(total_precipitation = sum(precipitacion_pluviometrica, na.rm = TRUE)) %>%
-    ungroup()
-
+  data <- data |>
+    dplyr::mutate(month = factor(format(fecha, "%B"), levels = month.name))
+  data_summary <- data |>
+    dplyr::group_by(id, month) |>
+    dplyr::summarise(total_precipitation = sum(precipitacion_pluviometrica, na.rm = TRUE)) |>
+    dplyr::ungroup()
   station_ids <- unique(data_summary$id)
-
   if (is.null(colors)) {
     dark_colors <- colors()[grep("dark", colors())]
     if (length(dark_colors) < length(station_ids)) {
@@ -75,19 +65,18 @@ monthly_precipitation_plot <- function(..., colors = NULL, title = "Accumulated 
       }
     }
   }
-
-  p <- ggplot(data_summary, aes(x = month, y = total_precipitation, fill = as.factor(id))) +
-    geom_bar(stat = "identity", position = "dodge") +
-    scale_fill_manual(values = colors) +
-    labs(title = title, x = "Month", y = "Total Precipitation (mm)", fill = "Station") +
-    theme_minimal(base_size = 14) +
-    theme(
-      plot.title = element_text(hjust = 0.5, face = "bold"),
+  p <- ggplot2::ggplot(data_summary, ggplot2::aes(x = month, y = total_precipitation, fill = as.factor(id))) +
+    ggplot2::geom_bar(stat = "identity", position = "dodge") +
+    ggplot2::scale_fill_manual(values = colors) +
+    ggplot2::labs(title = title, x = "Month", y = "Total Precipitation (mm)", fill = "Station") +
+    ggplot2::theme_minimal(base_size = 14) +
+    ggplot2::theme(
+      plot.title = ggplot2::element_text(hjust = 0.5, face = "bold"),
       legend.position = "bottom",
-      legend.title = element_text(face = "bold"),
-      axis.title = element_text(face = "bold"),
-      axis.text.x = element_text(angle = 45, hjust = 1)
+      legend.title = ggplot2::element_text(face = "bold"),
+      axis.title = ggplot2::element_text(face = "bold"),
+      axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)
     )
-
   return(p)
 }
+

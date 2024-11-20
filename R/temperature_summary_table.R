@@ -28,9 +28,7 @@
 #'
 #' @seealso `goatR::read_datasets` to load and view the temperature datasets.
 #'
-#' @import dplyr
 #' @export
-
 temperature_summary_table <- function(...) {
   station_data_list <- list(...)
 
@@ -47,12 +45,12 @@ temperature_summary_table <- function(...) {
   }
 
   combined_data |>
-    group_by(id) |>
-    summarise(
+    dplyr::group_by(id) |>
+    dplyr::summarise(
       average_temperature = mean(temperatura_abrigo_150cm, na.rm = TRUE),
       max_temperature = max(temperatura_abrigo_150cm, na.rm = TRUE),
       min_temperature = min(temperatura_abrigo_150cm, na.rm = TRUE),
       standard_deviation = sd(temperatura_abrigo_150cm, na.rm = TRUE),
-      total_days = n()
+      total_days = dplyr::n()
     )
 }
