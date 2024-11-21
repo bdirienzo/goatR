@@ -1,4 +1,5 @@
 # Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
+# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
 on:
   push:
     branches: [main, master]
@@ -34,11 +35,19 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v2
 
-      # Instalar qpdf en macOS
-      - name: Install qpdf (macOS only)
+      # Solución para Homebrew y qpdf en macOS
+      - name: Fix Homebrew and install qpdf (macOS only)
         if: ${{ matrix.config.os == 'macos-latest' }}
         run: |
+          echo "Updating Homebrew..."
           brew update
+          echo "Cleaning up old packages..."
+          brew cleanup
+          echo "Diagnosing potential issues with Homebrew..."
+          brew doctor || true
+          echo "Unlinking qpdf if already installed..."
+          brew unlink qpdf || true
+          echo "Installing qpdf..."
           brew install qpdf || brew link --overwrite qpdf
 
       # Configurar R
