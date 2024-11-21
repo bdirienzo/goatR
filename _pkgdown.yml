@@ -52,7 +52,7 @@ articles:
       - "vignette_avanzada"
 
 footer:
-  text: "Desarrollado por Bernardo Di Rienzo. © 2024."
+  text: "Desarrollado por Bernardo Di Rienzo y Lautaro Sanfilippo. © 2024."
   copyright: true
   contact:
     - text: "GitHub"
