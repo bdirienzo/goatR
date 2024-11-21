@@ -210,3 +210,29 @@ test_that("dark_colors is correctly extended to match length of station_ids", {
   extended_colors <- rep(dark_colors, length.out = length(station_ids))
   expect_equal(length(extended_colors), length(station_ids))
 })
+
+test_that("dark_colors is repeated to match station_ids in monthly_temperature_plot", {
+
+  data1 <- data.frame(
+    fecha = as.Date(c("2024-01-15", "2024-02-20", "2024-03-10")),
+    id = c("A", "B", "C"),
+    temperatura_abrigo_150cm = c(15.2, 20.3, 18.5)
+  )
+
+  data2 <- data.frame(
+    fecha = as.Date(c("2024-01-18", "2024-02-25", "2024-03-15")),
+    id = c("D", "E", "F"),
+    temperatura_abrigo_150cm = c(14.1, 19.8, 17.4)
+  )
+
+  mock_colors <- colors()[grep("dark", colors())]
+  mock_dark_colors <- mock_colors[1:2]
+  mock_env <- rlang::env(dark_colors = mock_dark_colors)
+
+  rlang::with_env(mock_env, {
+    expect_no_error({
+      plot <- monthly_temperature_plot(data1, data2, colors = NULL)
+    })
+  })
+})
+

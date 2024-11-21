@@ -144,3 +144,27 @@ test_that("colors vector is correctly named with station IDs if matching length"
 
   expect_equal(names(colors), c("station1", "station2"))
 })
+
+test_that("dark_colors is repeated to match station_ids", {
+
+  data1 <- data.frame(
+    fecha = as.Date(c("2024-01-15", "2024-02-20", "2024-03-10")),
+    id = c("A", "B", "C"),
+    precipitacion_pluviometrica = c(10, 20, 30)
+  )
+  data2 <- data.frame(
+    fecha = as.Date(c("2024-01-18", "2024-02-25", "2024-03-15")),
+    id = c("D", "E", "F"),
+    precipitacion_pluviometrica = c(5, 15, 25)
+  )
+  mock_colors <- colors()[grep("dark", colors())]
+  mock_dark_colors <- mock_colors[1:2]
+  mock_env <- rlang::env(dark_colors = mock_dark_colors)
+
+  rlang::with_env(mock_env, {
+    expect_no_error({
+      plot <- monthly_precipitation_plot(data1, data2, colors = NULL)
+    })
+  })
+})
+
