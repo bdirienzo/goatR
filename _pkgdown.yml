@@ -1,63 +1,12 @@
 url: https://bdirienzo.github.io/goatR/
-
 template:
   bootstrap: 5
   light-switch: true
   bootswatch: morph
   theme: arrow-dark
-
   bslib:
     bg: "#202123"
     fg: "#B8BCC2"
-    base_font:
-      family: "Roboto"
-    heading_font:
-      family: "Roboto Slab"
-    code_font:
-      family: "JetBrains Mono"
-
-navbar:
-  title: "goatR"
-  type: default
-  left:
-    - text: "Inicio"
-      href: index.html
-    - text: "Referencia"
-      href: reference/index.html
-    - text: "Vignettes"
-      href: articles/index.html
-    - text: "Artículos"
-      href: articles.html
-
-reference:
-  - title: "Funciones principales"
-    contents:
-      - "funcion1"
-      - "funcion2"
-      - "funcion3"
-  - title: "Funciones adicionales"
-    contents:
-      - "funcion4"
-      - "funcion5"
-
-articles:
-  - title: "Introducción"
-    contents:
-      - "vignette_introduccion"
-  - title: "Guía rápida"
-    contents:
-      - "vignette_guia_rapida"
-  - title: "Casos de uso avanzados"
-    contents:
-      - "vignette_avanzada"
-
-footer:
-  text: "Desarrollado por Bernardo Di Rienzo y Lautaro Sanfilippo. © 2024."
-  copyright: true
-  contact:
-    - text: "GitHub"
-      href: "https://github.com/bdirienzo/goatR"
-    - text: "Contacto"
-      href: "mailto:bernardo.d@example.com"
-
-output_dir: docs
+    base_font: {google: "Roboto"}
+    heading_font: {google: "Roboto Slab"}
+    code_font: {google: "JetBrains Mono"}
