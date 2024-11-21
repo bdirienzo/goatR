@@ -2,5 +2,5 @@ url: https://bdirienzo.github.io/goatR/
 template:
   bootstrap: 5
   light-switch: yes
-  bootswatch: morph
+  bootswatch: lux
   theme: arrow-dark
