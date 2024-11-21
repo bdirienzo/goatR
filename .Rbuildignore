@@ -1,11 +1,11 @@
 ^paquete2\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
-^data-raw$
 ^LICENSE\.md$
 ^CODE_OF_CONDUCT\.md$
 ^\.github$
 ^dev$
 ^goatr.Rproj$
-^custom_folder$
-^datasets-raw$
+^docs/\.nojekyll$
+^SECURITY\.md$
+^coverage\.xml$
