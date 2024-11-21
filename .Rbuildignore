@@ -9,3 +9,6 @@
 ^docs/\.nojekyll$
 ^SECURITY\.md$
 ^coverage\.xml$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

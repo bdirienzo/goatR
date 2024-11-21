@@ -1,12 +1,16 @@
 url: https://bdirienzo.github.io/goatR/
 template:
   bootstrap: 5
-  light-switch: true
+  light-switch: yes
   bootswatch: morph
   theme: arrow-dark
   bslib:
-    bg: "#202123"
-    fg: "#B8BCC2"
-    base_font: {google: "Roboto"}
-    heading_font: {google: "Roboto Slab"}
-    code_font: {google: "JetBrains Mono"}
+    bg: '#202123'
+    fg: '#B8BCC2'
+    base_font:
+      google: Roboto
+    heading_font:
+      google: Roboto Slab
+    code_font:
+      google: JetBrains Mono
+
