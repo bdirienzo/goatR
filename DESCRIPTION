@@ -24,6 +24,7 @@ Suggests:
     rmarkdown,
     mockery,
     testthat,
-    withr
+    withr,
+    rlang
 Config/testthat/edition: 3
 VignetteBuilder: knitr
