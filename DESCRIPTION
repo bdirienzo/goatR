@@ -25,6 +25,7 @@ Suggests:
     mockery,
     testthat,
     withr,
-    rlang
+    rlang,
+    qpdf
 Config/testthat/edition: 3
 VignetteBuilder: knitr
