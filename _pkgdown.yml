@@ -4,3 +4,15 @@ template:
   light-switch: yes
   bootswatch: darkly
   theme: arrow-dark
+output:
+  html_document:
+    includes:
+      in_header: |
+        <style>
+          h1 {
+              color: white !important;
+          }
+          h2 {
+              color: white !important;
+          }
+        </style>
